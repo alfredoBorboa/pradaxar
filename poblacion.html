@@ -187,7 +187,9 @@ $(document).ready(function () {
     localStorage.removeItem( "institucionSeleccionada");
     localStorage.removeItem( "metodoSeleccionado");
     localStorage.removeItem( "poblacionManual");
-    localStorage.removeItem("padecimientoSeleccionado");*/
+    localStorage.removeItem("padecimientoSeleccionado");
+    localStorage.removeItem( "poblacionAsegurada")
+    localStorage.removeItem( "cedulaInstitucionManual")*/
 
     if (localStorage.getItem("anoSeleccionado") != null && localStorage.getItem("estadoSeleccionado") != null && localStorage.getItem("institucionSeleccionada") != null) {
 
@@ -340,7 +342,9 @@ $(document).ready(function () {
       }
 
       document.getElementById( "btnSiguiente" ).addEventListener( 'touchend', function(){
-        console.log( "222" );
+            localStorage.setItem( "poblacionAsegurada", poblacionAsegurada );
+            localStorage.setItem( "cedulaInstitucionManual", $( "#cedulaInstitucion").html() );
+            window.location = "prevalencia.html";
       });
 
 });// document ready
