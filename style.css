@@ -1,0 +1,283 @@
+body{
+    background-color: #CACACA;
+    font-family: 'Lato-Light', sans-serif;
+}
+
+#barraLateral{
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    width:79px;
+    z-index: 100;
+    background-color:#222;
+}
+
+#barraSuperior{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:90px;
+    background-color: #FFF;
+    z-index: 101;
+    border-bottom:1px solid #CACACA;
+}
+
+#knobSInstituManual{
+    position:absolute;
+    width:50px;
+    height:50px;
+    background-color:#F00;
+    border-radius: 25px;
+    left:50%;
+    margin-left:-25px;
+    top:-2px;
+    pointer-events: none;
+    z-index: 100;
+}
+
+#knobSInstituManual img{
+    margin-left:-5px;
+    margin-top:-5px;
+}
+
+#selectorInstituManual{
+    position: absolute;
+    left:50%;
+    width:419px;
+    top:150px;
+    margin-left:-210px;
+    height:45px;
+}
+
+#imgSelecInstitutManual{
+    position:absolute;
+    height:50px;
+    pointer-events: none;
+}
+
+#contentInfo{
+    position:absolute;
+    width:945px;
+    height:679px;
+    right:0;
+    bottom:0;
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 0%, #cbe4e3 66%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(66%,#cbe4e3)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ffffff 0%,#cbe4e3 66%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ffffff 0%,#cbe4e3 66%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ffffff 0%,#cbe4e3 66%); /* IE10+ */
+background: linear-gradient(to bottom,  #ffffff 0%,#cbe4e3 66%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cbe4e3',GradientType=0 ); /* IE6-9 */
+
+
+
+}
+
+#infoViewport{
+    position:absolute;
+    width:800px;
+    height:600px;
+    left:50%;
+    margin-left:-400px;
+    top:50%;
+    margin-top:-300px;
+    background-color: #c0e1e4;
+    border-radius: 15px;
+    overflow: hidden;
+    -webkit-box-shadow: 0px 3px 25px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 3px 25px -4px rgba(0,0,0,0.75);
+box-shadow: 0px 3px 25px -4px rgba(0,0,0,0.75);
+}
+
+#headerViewport{
+    font-family: 'Lato-Black', sans-serif;
+    height:80px;
+    width:100%;
+    background-color:#30333b;
+    color:#FFF;
+    font-weight: 100;
+    text-align: center;
+    line-height: 80px;
+    font-size: 25px;
+    letter-spacing: 0.09em;
+}
+
+#contentInstitucion{
+    position:absolute;
+    bottom:80px;
+    left:0;
+    right:0;
+    height:300px;
+    background-color:#30333b;
+    display: none;
+
+}
+
+#formInstitucion{
+    position:absolute;
+    left:50%;
+    width:400px;
+    margin-left:-200px;
+    color:#FFF;
+}
+
+.tituloForm{
+    font-family: 'Lato-Black', sans-serif;
+    float:left;
+    height:30px;
+    line-height:30px;
+    font-size:20px;
+    width:210px;
+    margin-top:25px;
+    letter-spacing:0.06em;
+}
+
+#contentManual{
+    position:absolute;
+    bottom:80px;
+    left:0;
+    right:0;
+    height:300px;
+    background-color:#30333b;
+    display: none;
+
+}
+
+#formManual{
+    position:absolute;
+    left:50%;
+    width:400px;
+    margin-left:-200px;
+    color:#FFF;
+}
+
+#btnPoblacion{
+    background-image: url(imgs/layout/btnPoblacion.png);
+    background-size:100% auto;
+    width:85px;
+    height:80px;
+    margin-top:90px;
+}
+
+#btnPrevalencias{
+    background: url(imgs/layout/btnPrevalencias.png);
+    background-size:100% auto;
+    width:85px;
+    height:80px;
+}
+
+#btnComparativas{
+    background: url(imgs/layout/btnComparativas.png);
+    background-size:100% auto;
+    width:85px;
+    height:80px;
+}
+
+#btnResultados{
+    background: url(imgs/layout/btnResultados.png);
+    background-size:100% auto;
+    width:85px;
+    height:80px;
+}
+
+#btnCostos{
+    background: url(imgs/layout/btnCostos.png);
+    background-size:100% auto;
+    width:85px;
+    height:80px;
+}
+
+#btnReporte{
+    background: url(imgs/layout/btnReporte.png);
+    background-size:100% auto;
+    width:85px;
+    height:80px;
+}
+
+#btnOnoff{
+    background: url(imgs/layout/btnOnoff.png);
+    background-size:100% auto;
+    width:85px;
+    height:80px;
+}
+
+#btnMenu{
+    width:77px;
+    height:90px;
+    text-align: center;
+    line-height: 90px;
+    font-size: 30px;
+    float:left;
+}
+
+#logoSuperior{
+    width:150px;
+    height:90px;
+    float:left;
+    padding-left:20px;
+}
+
+#logoSuperior img{
+    height:80%;
+    margin-top:10px;
+}
+
+
+
+#cedulaSuperior{
+    width:250px;
+    height:70px;
+    margin-top:10px;
+    border-left: 3px solid #88b6c6;
+    padding-left:15px;
+    float:left;
+}
+
+#selecPadecimientoContainer{
+    position:absolute;
+    width:190px;
+    height:70px;
+    right:70px;
+    top:15px;
+    font-family: 'Lato-Regular', sans-serif;
+}
+
+#knobSPadecimiento{
+    position:absolute;
+    width:50px;
+    height:50px;
+    background-color:#F00;
+    border-radius: 25px;
+    left:0%;
+    margin-left:-25px;
+    top:-6px;
+    pointer-events: none;
+    z-index: 100;
+}
+
+#knobSPadecimiento img{
+    margin-left:-5px;
+    margin-top:-5px;
+}
+
+#imgSelecPadecimiento{
+    position:absolute;
+    height:50px;
+    pointer-events: none;
+}
+
+#btnSiguiente{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:90px;
+  background-color:#76AABE;
+  color: #FFF;
+  text-align: center;
+  line-height: 90px;
+  font-size: 30px;
+}

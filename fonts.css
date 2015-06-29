@@ -1,0 +1,65 @@
+@font-face {
+                        font-family: 'Lato-Black';
+                        src: url('Lato/Lato-Black.eot');
+       }
+
+@font-face {
+                        font-family: 'Lato-Black';
+                        src: url('Lato/Lato-Black.woff') format('woff'),
+                        url('Lato/Lato-Black.svg#Lato-Black') format('svg');
+       }
+
+      @font-face {
+                        font-family: 'Lato-Light';
+                        src: url('Lato/Lato-Light.eot');
+       }
+
+      @font-face {
+                        font-family: 'Lato-Light';
+                        src: url('Lato/Lato-Light.woff') format('woff'),
+                        url('Lato/Lato-Light.svg#Lato-Light') format('svg');
+       }
+
+      @font-face {
+                        font-family: 'Lato-Regular';
+                        src: url('Lato/Lato-Regular.eot');
+       }
+
+      @font-face {
+                        font-family: 'Lato-Regular';
+                        src: url('Lato/Lato-Regular.woff') format('woff'),
+                        url('Lato/Lato-Regular.svg#Lato-Regular') format('svg');
+       }
+
+      @font-face {
+                        font-family: 'Lato-Italic';
+                        src: url('Lato/Lato-Italic.eot');
+       }
+
+      @font-face {
+                        font-family: 'Lato-Italic';
+                        src: url('Lato/Lato-Italic.woff') format('woff'),
+                        url('Lato/Lato-Italic.svg#Lato-Italic') format('svg');
+       }
+
+      @font-face {
+                        font-family: 'Lato-LightItalic';
+                        src: url('Lato/Lato-LightItalic.eot');
+       }
+
+      @font-face {
+                        font-family: 'Lato-LightItalic';
+                        src: url('Lato/Lato-LightItalic.woff') format('woff'),
+                        url('Lato/Lato-LightItalic.svg#Lato-LightItalic') format('svg');
+       }
+
+      @font-face {
+                        font-family: 'Lato-Hairline';
+                        src: url('Lato/Lato-Hairline.eot');
+       }
+
+      @font-face {
+                        font-family: 'Lato-Hairline';
+                        src: url('Lato/Lato-Hairline.woff') format('woff'),
+                        url('Lato/Lato-Hairline.svg#Lato-Hairline') format('svg');
+       }

@@ -1,0 +1,433 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script src="jquery.js"></script>
+<script src="formstone/js/core.js"></script>
+<script src="formstone/js/touch.js"></script>
+<script src="formstone/js/range.js"></script>
+<script src="formstone/js/dropdown.js"></script>
+<script src="formstone/js/number.js"></script>
+
+<link rel="stylesheet" type="text/css" href="formstone/css/range.css">
+<link rel="stylesheet" type="text/css" href="formstone/css/dropdown.css">
+<link rel="stylesheet" type="text/css" href="formstone/css/number.css">
+<link rel="stylesheet" type="text/css" href="fonts.css">
+<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>Parámetros</title>
+</head>
+
+<body>
+
+
+<div id="contentInfo">
+<div id="infoViewport">
+
+    <div id="headerViewport"><i class="fa fa-caret-right"></i>&nbsp;&nbsp;&nbsp;POBLACIÓN&nbsp;&nbsp;&nbsp;<i class="fa fa-caret-left"></i></div>
+
+<div id="selectorInstituManual">
+
+<input type="range" id="inputInstituManual" min="0" max="100" step="50" data-range-options='{"labels":false}'>
+
+<div id="knobSInstituManual"><img src="imgs/poblacion/knobInstituManual.png" width="60"/></div>
+
+<div id="imgSelecInstitutManual">
+<img src="imgs/poblacion/selecInstituManual.png"/ width="419">
+</div>
+
+</div><!-- selectorInstituManual-->
+
+<div id="contentInstitucion">
+<form id="formInstitucion">
+    <div class="tituloForm"><i class="fa fa-caret-right"></i>&nbsp;&nbsp;AÑO</div>
+    <select name="ano" id="ano" class="dataInput">
+    <option value="2015">2015</option>
+    <option value="2016">2016</option>
+    <option value="2017">2017</option>
+    <option value="2018">2018</option>
+    <option value="2019">2019</option>
+    <option value="2020">2020</option>
+</select>
+    <br>
+    <div class="tituloForm"><i class="fa fa-caret-right"></i>&nbsp;&nbsp;ENTIDAD</div>
+<select name="estado" id="estado" class="dataInput">
+    <option value="0">Seleccionar Estado</option>
+    <option value="México">México</option>
+	<option value="Aguascalientes">Aguascalientes</option>
+	<option value="Baja California">Baja California</option>
+	<option value="Baja California Sur">Baja California Sur</option>
+	<option value="Campeche">Campeche</option>
+	<option value="Chiapas">Chiapas</option>
+	<option value="Chihuahua">Chihuahua</option>
+	<option value="Coahuila">Coahuila</option>
+	<option value="Colima">Colima</option>
+	<option value="Distrito Federal">Distrito Federal</option>
+	<option value="Durango">Durango</option>
+	<option value="Estado de México">Estado de México</option>
+	<option value="Guanajuato">Guanajuato</option>
+	<option value="Guerrero">Guerrero</option>
+	<option value="Hidalgo">Hidalgo</option>
+	<option value="Jalisco">Jalisco</option>
+	<option value="Michoacán">Michoacán</option>
+	<option value="Morelos">Morelos</option>
+	<option value="Nayarit">Nayarit</option>
+	<option value="Nuevo León">Nuevo León</option>
+	<option value="Oaxaca">Oaxaca</option>
+	<option value="Puebla">Puebla</option>
+	<option value="Querétaro">Querétaro</option>
+	<option value="Quintana Roo">Quintana Roo</option>
+	<option value="San Luis Potosí">San Luis Potosí</option>
+	<option value="Sinaloa">Sinaloa</option>
+	<option value="Sonora">Sonora</option>
+	<option value="Tabasco">Tabasco</option>
+	<option value="Tamaulipas">Tamaulipas</option>
+	<option value="Tlaxcala">Tlaxcala</option>
+	<option value="Veracruz">Veracruz</option>
+	<option value="Yucatán">Yucatán</option>
+	<option value="Zacatecas">Zacatecas</option>
+</select>
+    <br>
+    <div class="tituloForm"><i class="fa fa-caret-right"></i>&nbsp;&nbsp;INSTITUCIÓN</div>
+    <select name="institucion" id="institucion" class="dataInput">
+    <option value="0">Seleccionar Institución</option>
+    <option value="IMSS">IMSS</option>
+    <option value="ISSSTE">ISSSTE</option>
+    <option value="PEMEX">PEMEX</option>
+    <option value="SEDENA">SEDENA</option>
+    <option value="SEMAR">SEMAR</option>
+    <option value="Estatal">Estatal</option>
+    <option value="SeguroPopular">Seguro Popular</option>
+</select>
+</form>
+    </div><!--contentInstitucion-->
+
+    <div id="contentManual">
+        <form id="formManual" style="padding-top:100px">
+            <div class="tituloForm" style="margin-top:0px"><i class="fa fa-caret-right"></i>&nbsp;&nbsp;NO. PERSONAS</div>
+            <input type="number" id="inputManual">
+        </form>
+    </div><!-- contentManual-->
+
+    <div id="btnSiguiente">Siguiente</div>
+</div><!--infoViewPort-->
+</div> <!--contentInfo-->
+
+<div id="barraLateral">
+    <div id="btnPoblacion" style="background-position: 0 -80px" >
+    </div>
+    <div id="btnPrevalencias" class="btnLateral" >
+    </div>
+    <div id="btnComparativas" class="btnLateral" >
+    </div>
+    <div id="btnResultados" class="btnLateral" >
+    </div>
+    <div id="btnCostos" class="btnLateral" >
+    </div>
+    <div id="btnReporte" class="btnLateral" >
+    </div>
+    <div id="btnOnoff" class="btnLateral" >
+    </div>
+</div>
+
+<div id="barraSuperior">
+
+    <div id="btnMenu">
+        <i class="fa fa-bars"></i>
+    </div>
+
+    <div id="logoSuperior">
+        <img src="imgs/layout/logoPradaxar.png"/>
+    </div>
+
+    <div id="cedulaSuperior"><br>
+        DABIGATRÁN EN <span id="cedulaPadecimiento"></span><br>
+        <span id="cedulaInstitucion" style="font-family: 'Lato-Black', sans-serif;"></span>
+    </div>
+
+    <div id="selecPadecimientoContainer">
+        <input type="range" id="inputPadecimiento" min="0" max="50" step="50" data-range-options='{"labels":false}'>
+
+        <div id="knobSPadecimiento"><img src="imgs/poblacion/knobPadecimiento.png" width="60"/></div>
+
+        <div id="imgSelecPadecimiento">
+            <img src="imgs/poblacion/selecPadecimiento.png"/ width="190">
+        </div>
+        FANV &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TVP/EP
+    </div>
+
+</div><!--barraSuperior-->
+
+</body>
+
+<script>
+
+$("#inputInstituManual").range();
+$("#inputPadecimiento").range();
+$(".dataInput").dropdown();
+$("#inputManual").number();
+
+var anoSeleccionado = 0;
+var estadoSeleccionado = 0;
+
+var poblacionTotal = 0;
+var poblacionAsegurada = 0;
+
+var poblacionManual = 0;
+
+var institucionSeleccionada = 0;
+
+var metodoSeleccionado = 1;
+var padecimientoSeleccionado = 0;
+
+$(document).ready(function () {
+
+   /* localStorage.removeItem( "anoSeleccionado");
+    localStorage.removeItem( "estadoSeleccionado");
+    localStorage.removeItem( "institucionSeleccionada");
+    localStorage.removeItem( "metodoSeleccionado");
+    localStorage.removeItem( "poblacionManual");
+    localStorage.removeItem("padecimientoSeleccionado");*/
+
+    if (localStorage.getItem("anoSeleccionado") != null && localStorage.getItem("estadoSeleccionado") != null && localStorage.getItem("institucionSeleccionada") != null) {
+
+        $( "#ano" ).val( localStorage.getItem( "anoSeleccionado") );
+        $( "#estado" ).val( localStorage.getItem( "estadoSeleccionado") );
+        $( "#institucion" ).val( localStorage.getItem( "institucionSeleccionada") );
+        $( ".dataInput" ).change();
+    }
+
+    if(localStorage.getItem("poblacionManual") != null ){
+        $( "#inputManual" ).val( localStorage.getItem( "poblacionManual" ) );
+        $( "#inputManual" ).change();
+        poblacionManual = $( "#inputManual" ).val();
+        updateValues();
+    }
+
+    //console.log( $('#inputInstituManual').val() );
+    anoSeleccionado = $( "#ano" ).val();
+    estadoSeleccionado = $( "#estado" ).val();
+    institucionSeleccionada = $( "#institucion" ).val();
+
+    $( ".dataInput" ).on( "change", function(){
+        updateValues();
+    });
+
+    $( "#inputManual" ).keyup( function(){
+        poblacionManual = $(this).val();
+        localStorage.setItem( "poblacionManual", $( this ).val() );
+        updateValues();
+    });
+
+    $("#inputManual").on( "touchend", function(){
+        $( this ).val( "" );
+        localStorage.removeItem( "poblacionManual");
+        poblacionManual = 0;
+        updateValues();
+    });
+
+    //----------------------------------------------------slider y localstorage para metodo de ingreso de poblacion
+    var trackInstituManual = document.getElementById( "selectorInstituManual" ).children[0];
+
+    if(localStorage.getItem("metodoSeleccionado") != null) {
+            trackInstituManual.children[1].children[0].style.left = localStorage.getItem("metodoSeleccionado");
+            $("#knobSInstituManual").css( "left", localStorage.getItem("metodoSeleccionado"));
+            if( localStorage.getItem("metodoSeleccionado") == "0%" ){
+            metodoSeleccionado = 0;
+            }
+            if( localStorage.getItem("metodoSeleccionado") == "50%" ){
+            metodoSeleccionado = 1;
+            }
+            if( localStorage.getItem("metodoSeleccionado") == "100%" ){
+            metodoSeleccionado = 2;
+            }
+       }else{
+           metodoSeleccionado = 1;
+           trackInstituManual.children[1].children[0].style.left = "50%";
+           $("#knobSInstituManual").css( "left", trackInstituManual.children[1].children[0].style.left );
+       }
+
+    updateValues();
+
+    trackInstituManual.addEventListener('touchstart', function(e) {
+        $("#knobSInstituManual").css( "left", this.children[1].children[0].style.left );
+    });
+
+    trackInstituManual.addEventListener('touchmove', function(e) {
+        $("#knobSInstituManual").css( "left", this.children[1].children[0].style.left );
+    });
+
+    trackInstituManual.addEventListener('touchend', function(e) {
+        if( this.children[1].children[0].style.left == "0%" ){
+            metodoSeleccionado = 0;
+            localStorage.setItem( "metodoSeleccionado", "0%" );
+        }
+        if( this.children[1].children[0].style.left == "50%" ){
+            metodoSeleccionado = 1;
+            localStorage.setItem( "metodoSeleccionado", "50%" );
+        }
+        if( this.children[1].children[0].style.left == "100%" ){
+            metodoSeleccionado = 2;
+            localStorage.setItem( "metodoSeleccionado", "100%" );
+        }
+        updateValues();
+    });
+    //----------------------------------------------------slider y localstorage para metodo de ingreso de poblacion
+    //----------------------------------------------------slider y localstorage para selector de padecimiento
+    var trackSelecPadecimiento = document.getElementById( "selecPadecimientoContainer" ).children[0];
+
+    if(localStorage.getItem("padecimientoSeleccionado") != null) {
+            //trackSelecPadecimiento.children[1].children[0].style.left = localStorage.getItem("padecimientoSeleccionado");
+            //$("#knobSPadecimiento").css( "left", localStorage.getItem("metodoSeleccionado"));
+            if( localStorage.getItem("padecimientoSeleccionado") == "0%" ){
+            trackSelecPadecimiento.children[1].children[0].style.left = "0%";
+            $("#knobSPadecimiento").css( "left", trackSelecPadecimiento.children[1].children[0].style.left );
+            padecimientoSeleccionado = 0;
+            }
+            if( localStorage.getItem("padecimientoSeleccionado") == "100%" ){
+            trackSelecPadecimiento.children[1].children[0].style.left = "100%";
+            $("#knobSPadecimiento").css( "left", trackSelecPadecimiento.children[1].children[0].style.left );
+            padecimientoSeleccionado = 1;
+            }
+            updateValues();
+       }else{
+           padecimientoSeleccionado = 0;
+           trackSelecPadecimiento.children[1].children[0].style.left = "0%";
+           $("#knobSPadecimiento").css( "left", trackSelecPadecimiento.children[1].children[0].style.left );
+       }
+
+    trackSelecPadecimiento.addEventListener('touchstart', function(e) {
+        $("#knobSPadecimiento").css( "left", this.children[1].children[0].style.left );
+    });
+
+    trackSelecPadecimiento.addEventListener('touchmove', function(e) {
+        $("#knobSPadecimiento").css( "left", this.children[1].children[0].style.left );
+    });
+
+    trackSelecPadecimiento.addEventListener('touchend', function(e) {
+        if( this.children[1].children[0].style.left == "0%" ){
+            padecimientoSeleccionado = 0;
+            localStorage.setItem( "padecimientoSeleccionado", "0%" );
+        }
+        if( this.children[1].children[0].style.left == "100%" ){
+            padecimientoSeleccionado = 1;
+            localStorage.setItem( "padecimientoSeleccionado", "100%" );
+        }
+        updateValues();
+    });
+    //----------------------------------------------------slider y localstorage para selector de padecimiento
+
+    //styling especifico para esta seccion
+
+    $(".fs-dropdown").css( "display", "inline-block" );
+    $(".fs-dropdown").css( "width", "190px" );
+    $(".fs-number").css( "display", "inline-block" );
+    $(".fs-number").css( "width", "190px" );
+
+    arrayBtnsLaterales = document.getElementsByClassName( "btnLateral" );
+
+    for( var i = 0; i < arrayBtnsLaterales.length; i++ ){
+
+        arrayBtnsLaterales[ i ].addEventListener( 'touchstart', function(){
+            var stringBackground = "url(imgs/layout/" + this.id + ".png)";
+            this.style.backgroundPosition = "0 -80px";
+        });
+
+        arrayBtnsLaterales[ i ].addEventListener( 'touchend', function(){
+            var stringBackground = "url(imgs/layout/" + this.id + ".png)";
+            this.style.backgroundPosition = "0 0px";
+        });
+      }
+
+      document.getElementById( "btnSiguiente" ).addEventListener( 'touchend', function(){
+        console.log( "222" );
+      });
+
+});// document ready
+
+function updateValues(){
+    if( metodoSeleccionado == 0 ){
+        $("#contentInstitucion").show();
+        $("#contentManual").hide();
+        anoSeleccionado = $( "#ano" ).val();
+        estadoSeleccionado = $( "#estado" ).val();
+        institucionSeleccionada = $( "#institucion" ).val();
+        if( $("#institucion" ).val() != "0" ){
+        $( "#cedulaInstitucion").html( $("#institucion" ).val() );
+        }
+        $.ajax({
+            type: "GET",
+            url: "poblacion.xml",
+            dataType: "xml",
+            success: xmlPoblacion
+        });
+
+        $.ajax({
+            type: "GET",
+            url: "instituciones.xml",
+            dataType: "xml",
+            success: xmlInstitucion,
+            error: function (xhr, ajaxOptions, thrownError) {
+            //alert(xhr.status);
+            //alert(thrownError);
+            }
+        });
+    } // if metodoSeleccionado == 0
+
+    if( metodoSeleccionado == 1 ){
+        poblacionAsegurada = 1;
+        $("#contentInstitucion").hide();
+        $("#contentManual").hide();
+    }
+
+    if( metodoSeleccionado == 2 ){
+         $("#contentInstitucion").hide();
+        $("#contentManual").show();
+        $( "#cedulaInstitucion").html( "MANUAL" );
+        //console.log( poblacionManual );
+        poblacionAsegurada = poblacionManual;
+        console.log( poblacionAsegurada );
+    }
+
+    if( padecimientoSeleccionado == 0 ){
+        $( "#cedulaPadecimiento" ).html( "FANV" );
+    }
+
+    if( padecimientoSeleccionado == 1 ){
+        $( "#cedulaPadecimiento" ).html( "TVP/EP" );
+    }
+
+
+}
+
+function xmlPoblacion(xml) {
+    $(xml).find("Row").each(function () { // encuentra las Row's y loopea sobre ellas
+        if( $( this ).find("estado").text() == estadoSeleccionado ){ // busca el estado y matchea con estado seleccionado
+            $( this ).find( "poblacion").each(function(){ // busca poblacion y matchea con año seleccionado
+                if( $( this ).attr( "ano" ) == anoSeleccionado ){
+                poblacionTotal = $( this ).text();
+                }
+            });
+        }
+    });
+}
+
+    function xmlInstitucion(xml) {
+    $(xml).find("Row").each(function () { // encuentra las Row's y loopea sobre ellas
+        $( this ).find( "institucion" ).each( function(){
+            if( $( this ).attr( "nombre" ) == institucionSeleccionada ){
+                poblacionAsegurada = poblacionTotal * $( this ).text();
+                //console.log( poblacionAsegurada );
+                console.log( poblacionAsegurada );
+                localStorage.setItem( "anoSeleccionado", anoSeleccionado );
+                localStorage.setItem( "estadoSeleccionado", estadoSeleccionado );
+                localStorage.setItem( "institucionSeleccionada", institucionSeleccionada );
+
+            }
+        });
+    });
+}
+
+</script>
+
+</html>
