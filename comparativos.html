@@ -1,0 +1,1030 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!--<meta name="viewport" content="width=device-height, height=device-width, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />-->
+<script src="jquery.js"></script>
+<script src="formstone/js/core.js"></script>
+<script src="formstone/js/touch.js"></script>
+<script src="formstone/js/range.js"></script>
+<script src="formstone/js/dropdown.js"></script>
+<script src="formstone/js/number.js"></script>
+
+<link rel="stylesheet" type="text/css" href="formstone/css/range.css">
+<link rel="stylesheet" type="text/css" href="formstone/css/dropdown.css">
+<link rel="stylesheet" type="text/css" href="formstone/css/number.css">
+<link rel="stylesheet" type="text/css" href="fonts.css">
+<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>Comparativos</title>
+</head>
+
+<body>
+
+
+<div id="contentInfo">
+
+  <div id="headComparativos"></div>
+
+  <div id="grafica">
+
+    <div id="contBarra1">
+    <div class="barra1c5"></div>
+    <div class="barra1c4"></div>
+    <div class="barra1c3"></div>
+    <div class="barra1c2"></div>
+    <div class="barra1c1"></div>
+  </div>
+
+  <div id="contBarra2">
+    <div class="barra2c5"></div>
+    <div class="barra2c4"></div>
+    <div class="barra2c3"></div>
+    <div class="barra2c2"></div>
+    <div class="barra2c1"></div>
+  </div>
+
+  <div id="baseGrafica"></div>
+  <div id="disclaimerGrafica">Nota: Los resultados mostrados son estimaciones de una modelación probabilística en una proyección a 5 años.</div>
+
+  <div id="overlayGrafica">
+    <div class="renglonOverlayGrafica"></div>
+    <div class="renglonOverlayGrafica"></div>
+    <div class="renglonOverlayGrafica"></div>
+    <div class="renglonOverlayGrafica"></div>
+    <div class="renglonOverlayGrafica"></div>
+    <div class="renglonOverlayGrafica"></div>
+    <div class="renglonOverlayGrafica"></div>
+    <div class="renglonOverlayGrafica"></div>
+    <div class="renglonOverlayGrafica"></div>
+    <div class="renglonOverlayGrafica"></div>
+    <div class="renglonOverlayGrafica"></div>
+    <div class="renglonOverlayGrafica"></div>
+    <div class="renglonOverlayGrafica"></div>
+  </div>
+
+  </div>
+
+
+  <div id="resultadosFanv">
+
+    <div id="headResultados2">
+      <span class="bold">Dabigatrán</span>&nbsp;&nbsp;&nbsp; Vs &nbsp;&nbsp;&nbsp;<span class="cedulaOtrasComp2"></span>
+    </div>
+
+    <div id="pacientesATratar">
+      <span class="bold">AHORRO CON DABIGATRÁN</span><br>
+      <span class="numPacientes"></span>
+    </div>
+
+    <!--<div id="tablaResultados">
+    <div class="tercioTabla" ></div><div class="tercioTabla"><span class="bold">Costos directos</span></div><div class="tercioTabla"></div><br>
+    <div class="tercioTabla" id="adqDabiFanv"></div><div class="tercioTabla">Adquisición</div><div class="tercioTabla" id="adqCompFanv"></div><br>
+    <div class="tercioTabla" id="evAdvDabiFanv"></div><div class="tercioTabla">Eventos adversos</div><div class="tercioTabla" id="evAdvCompFanv"></div><br>
+    <div class="tercioTabla" id="seguiDabiFanv"></div><div class="tercioTabla">Seguimiento</div><div class="tercioTabla" id="seguiCompFanv"></div><br>
+    <div class="tercioTabla" id="moniDabiFanv"></div><div class="tercioTabla">Monitoreo</div><div class="tercioTabla" id="moniCompFanv"></div><br>
+    <div class="tercioTabla" id="totalDabiFanv"></div><div class="tercioTabla">Total</div><div class="tercioTabla" id="totalCompFanv"></div><br>
+    <div class="tercioTabla"></div><div class="tercioTabla"><span class="bold">Resultados en salud</span></div><div class="tercioTabla"></div><br>
+    <div class="tercioTabla" id="anosganadosPpDabiFanv"></div><div class="tercioTabla">Años de vida ganados p/paciente</div><div class="tercioTabla" id="anosganadosPpCompFanv"></div><br>
+    <div class="tercioTabla" id="evcisquemicoPpDabiFanv"></div><div class="tercioTabla">Con EVC isquémico</div><div class="tercioTabla" id="evcisquemicoPpCompFanv"></div><br>
+    <div class="tercioTabla" id="ataquesPpDabiFanv"></div><div class="tercioTabla">Con ataques isquémicos trans.</div><div class="tercioTabla" id="ataquesPpCompFanv"></div><br>
+    <div class="tercioTabla" id="hemorragiaPpDabiFanv"></div><div class="tercioTabla">Con hemorragia intracraneal</div><div class="tercioTabla" id="hemorragiaPpCompFanv"></div><br>
+  </div>-->
+
+    <div class="resultadosDown">
+      <div class="contResultadoDown">
+        <div class="cedulaResultadoDown">
+          EVC isquémicos evitados
+        </div>
+        <div class="cifraResultadoDown">
+          <span class="verde"><i class="fa fa-caret-left"></i></span>&nbsp;&nbsp;<span id="evcEvitadosFanv"></span>
+        </div>
+      </div><!--contResultadoDown-->
+
+      <div class="contResultadoDown">
+        <div class="cedulaResultadoDown">
+          Ataques isquémicos t. evitados
+        </div>
+        <div class="cifraResultadoDown">
+          <span class="verde"><i class="fa fa-caret-left"></i></span>&nbsp;&nbsp;<span id="isquemicosEvitadosFanv"></span>
+        </div>
+      </div><!--contResultadoDown-->
+
+      <div class="contResultadoDown">
+        <div class="cedulaResultadoDown">
+          Hemorragias intracraneales evitadas
+        </div>
+        <div class="cifraResultadoDown">
+          <span class="verde"><i class="fa fa-caret-left"></i></span>&nbsp;&nbsp;<span id="hemorragiasEvitadosFanv"></span>
+        </div>
+      </div><!--contResultadoDown-->
+
+    </div><!--resultadosDown-->
+
+  </div><!--resultadosFanv-->
+
+  <div id="resultadosTvp">
+
+    <div id="headResultados2">
+      <span class="bold">Dabigatrán</span>&nbsp;&nbsp;&nbsp; Vs &nbsp;&nbsp;&nbsp;<span class="cedulaOtrasComp2"></span>
+    </div>
+
+    <div id="pacientesATratar">
+      <span class="bold">AHORRO CON DABIGATRÁN</span><br>
+      <span class="numPacientes"></span>
+    </div>
+
+  <!--  <div id="tablaResultados">
+    <div class="tercioTabla" ></div><div class="tercioTabla"><span class="bold">Costos directos</span></div><div class="tercioTabla"></div><br>
+    <div class="tercioTabla" id="adqDabiTvp"></div><div class="tercioTabla">Adquisición</div><div class="tercioTabla" id="adqCompTvp"></div><br>
+    <div class="tercioTabla" id="hospitalariosDabiTvp"></div><div class="tercioTabla">Costos hospitalarios</div><div class="tercioTabla" id="hospitalariosCompTvp"></div><br>
+    <div class="tercioTabla" id="administracionDabiTvp"></div><div class="tercioTabla">Admin. y monitoreo</div><div class="tercioTabla" id="administracionCompTvp"></div><br>
+    <div class="tercioTabla" id="recurrenciaDabiTvp"></div><div class="tercioTabla">Recurrencia de EA</div><div class="tercioTabla" id="recurrenciaCompTvp"></div><br>
+    <div class="tercioTabla" id="adversosDabiTvp"></div><div class="tercioTabla">Eventos adversos</div><div class="tercioTabla" id="adversosCompTvp"></div><br>
+    <div class="tercioTabla" id="totalDabiTvp"></div><div class="tercioTabla">Total</div><div class="tercioTabla" id="totalCompTvp"></div><br>
+    <div class="tercioTabla"></div><div class="tercioTabla"><span class="bold">Resultados en salud</span></div><div class="tercioTabla"></div><br>
+    <div class="tercioTabla" id="anosganadosPpDabiTvp"></div><div class="tercioTabla">Años de vida ganados p/paciente</div><div class="tercioTabla" id="anosganadosPpCompTvp"></div><br>
+    <div class="tercioTabla" id="eventossangradoPpDabiTvp"></div><div class="tercioTabla">Eventos de sangrado</div><div class="tercioTabla" id="eventossangradoPpCompTvp"></div><br>
+    <div class="tercioTabla" id="muertessangradoPpDabiTvp"></div><div class="tercioTabla">Muertes por sangrado</div><div class="tercioTabla" id="muertessangradoPpCompTvp"></div><br>
+    <div class="tercioTabla" id="infartoPpDabiTvp"></div><div class="tercioTabla">Muertes por infarto</div><div class="tercioTabla" id="infartoPpCompTvp"></div><br>
+    <div class="tercioTabla" id="anginaPpDabiTvp"></div><div class="tercioTabla">Muertes por angina inestable</div><div class="tercioTabla" id="anginaPpCompTvp"></div><br>
+    <div class="tercioTabla" id="sindromePpDabiTvp"></div><div class="tercioTabla">Síndrome post-trombolítico</div><div class="tercioTabla" id="sindromePpCompTvp"></div><br>
+  </div>-->
+
+    <div class="resultadosDown">
+      <div class="contResultadoDown">
+        <div class="cedulaResultadoDown">
+          Eventos de sangrado evitados
+        </div>
+        <div class="cifraResultadoDown">
+          <span class="verde"><i class="fa fa-caret-left"></i></span>&nbsp;&nbsp;<span id="eventossangradoEvitadosTvp"></span>
+        </div>
+      </div><!--contResultadoDown-->
+
+      <div class="contResultadoDown">
+        <div class="cedulaResultadoDown">
+          Muertes por sangrado evitadas
+        </div>
+        <div class="cifraResultadoDown">
+          <span class="verde"><i class="fa fa-caret-left"></i></span>&nbsp;&nbsp;<span id="muertessangradoEvitadosTvp"></span>
+        </div>
+      </div><!--contResultadoDown-->
+
+      <div class="contResultadoDown">
+        <div class="cedulaResultadoDown">
+          Muertes por infarto <br>evitadas
+        </div>
+        <div class="cifraResultadoDown">
+          <span class="verde"><i class="fa fa-caret-left"></i></span>&nbsp;&nbsp;<span id="infartoEvitadosTvp"></span>
+        </div>
+      </div><!--contResultadoDown-->
+
+      <div class="contResultadoDown">
+        <div class="cedulaResultadoDown">
+          Muertes por angina <br>evitadas
+        </div>
+        <div class="cifraResultadoDown">
+          <span class="verde"><i class="fa fa-caret-left"></i></span>&nbsp;&nbsp;<span id="anginaEvitadosTvp"></span>
+        </div>
+      </div><!--contResultadoDown-->
+
+      <div class="contResultadoDown">
+        <div class="cedulaResultadoDown">
+          S. post-trombolíticos evitados
+        </div>
+        <div class="cifraResultadoDown">
+          <span class="verde"><i class="fa fa-caret-left"></i></span>&nbsp;&nbsp;<span id="sindromeEvitadosTvp"></span>
+        </div>
+      </div><!--contResultadoDown-->
+    </div><!--resultadosDown-->
+
+  </div><!--resultadosTvp-->
+
+</div> <!--contentInfo-->
+
+<div id="barraLateral">
+    <div id="btnPoblacion" class="btnLateral">
+    </div>
+    <div id="btnPrevalencias" class="btnLateral" >
+    </div>
+    <div id="btnComparativas" class="btnLateral" >
+    </div>
+    <div id="btnResultados" style="background-position: 0 -80px">
+    </div>
+    <div id="btnCostos" class="btnLateral" >
+    </div>
+    <div id="btnReporte" class="btnLateral" >
+    </div>
+    <div id="btnOnoff" class="btnLateral" >
+    </div>
+</div>
+
+<div id="barraSuperior">
+
+    <div id="btnMenu">
+        <i class="fa fa-bars"></i>
+    </div>
+
+    <div id="logoSuperior">
+        <img src="imgs/layout/logoPradaxar.png"/>
+    </div>
+
+    <div id="cedulaSuperior"><br>
+        DABIGATRÁN EN <span class="cedulaPadecimiento"></span><br>
+        <span id="cedulaInstitucion" style="font-family: 'Lato-Black', sans-serif;"></span>
+    </div>
+
+    <div id="selecPadecimientoContainer">
+        <input type="range" id="inputPadecimiento" min="0" max="50" step="50" data-range-options='{"labels":false}'>
+
+        <div id="knobSPadecimiento"><img src="imgs/poblacion/knobPadecimiento.png" width="45"/></div>
+
+        <div id="imgSelecPadecimiento">
+            <img src="imgs/poblacion/selecPadecimiento.png"/ width="150">
+        </div>
+        FANV &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TVP/EP
+    </div><!-- selecPadecimientoContainer -->
+
+    <div id="selecCompetenciaContainer">
+        <input type="range" id="inputCompetencia" min="0" max="100" step="50" data-range-options='{"labels":false}'>
+
+        <div id="knobSCompetencia"><img src="imgs/poblacion/knobCompetencia.png" width="45"/></div>
+
+        <div id="imgSelecCompetencia">
+            <img src="imgs/poblacion/selecCompetencia.png"/ width="231">
+        </div>
+        RIVAROXABÁN&nbsp; APIXABÁN&nbsp; WARFARINA
+    </div><!-- selecCompetenciaContainer -->
+
+</div><!--barraSuperior-->
+
+</body>
+
+<script>
+
+//----------------------------------------- gráfica
+
+
+
+//----------------------------------------- gráfica
+
+$("#inputPadecimiento").range();
+$("#inputCompetencia").range();
+$("#inputPrevalenciaN").number();
+
+var padecimientoSeleccionado = 0;
+var competenciaSeleccionada = 0;
+var numPacientes = localStorage.getItem( "numPacientesATratar" );
+var arrayCompetencias = [ "Rivaroxabán", "Apixabán", "Warfarina" ];
+var arrayCompetenciasN = [ "rivaroxaban", "apixaban", "warfarina" ];
+
+$(document).ready(function () {
+
+   /* localStorage.removeItem( "anoSeleccionado");
+    localStorage.removeItem( "estadoSeleccionado");
+    localStorage.removeItem( "institucionSeleccionada");
+    localStorage.removeItem( "metodoSeleccionado");
+    localStorage.removeItem( "poblacionManual");
+    localStorage.removeItem("padecimientoSeleccionado");
+    localStorage.removeItem( "poblacionAsegurada");
+    localStorage.removeItem( "numPacientesATratar");*/
+
+    $( "#btnCostos" ).on( "touchend", function(){
+      window.location = "resultados.html";
+    });
+
+    $( "#btnPrevalencias" ).on( "touchend", function(){
+      window.location = "prevalencia.html";
+    });
+
+    $( "#btnPoblacion" ).on( "touchend", function(){
+      window.location = "poblacion.html";
+    });
+
+    $( "#btnComparativas" ).on( "touchend", function(){
+      window.location = "costos.html";
+    });
+
+
+    //$( ".numPacientes" ).html( Math.round( localStorage.getItem( "numPacientesATratar" ) * 100 ) / 100 );
+    //$( ".numPacientes" ).digits();
+    $( "#cedulaInstitucion" ).html( localStorage.getItem( "cedulaInstitucionManual") );
+
+    //----------------------------------------------------slider y localstorage para selector de padecimiento
+    var trackSelecPadecimiento = document.getElementById( "selecPadecimientoContainer" ).children[0];
+
+    if(localStorage.getItem("padecimientoSeleccionado") != null) {
+            //trackSelecPadecimiento.children[1].children[0].style.left = localStorage.getItem("padecimientoSeleccionado");
+            //$("#knobSPadecimiento").css( "left", localStorage.getItem("metodoSeleccionado"));
+            if( localStorage.getItem("padecimientoSeleccionado") == "0%" ){
+            trackSelecPadecimiento.children[1].children[0].style.left = "0%";
+            $("#knobSPadecimiento").css( "left", trackSelecPadecimiento.children[1].children[0].style.left );
+            padecimientoSeleccionado = 0;
+            }
+            if( localStorage.getItem("padecimientoSeleccionado") == "100%" ){
+            trackSelecPadecimiento.children[1].children[0].style.left = "100%";
+            $("#knobSPadecimiento").css( "left", trackSelecPadecimiento.children[1].children[0].style.left );
+            padecimientoSeleccionado = 1;
+            }
+            updateValues();
+       }else{
+           padecimientoSeleccionado = 0;
+           trackSelecPadecimiento.children[1].children[0].style.left = "0%";
+           $("#knobSPadecimiento").css( "left", trackSelecPadecimiento.children[1].children[0].style.left );
+       }
+
+    trackSelecPadecimiento.addEventListener('touchstart', function(e) {
+        $("#knobSPadecimiento").css( "left", this.children[1].children[0].style.left );
+    });
+
+    trackSelecPadecimiento.addEventListener('touchmove', function(e) {
+        $("#knobSPadecimiento").css( "left", this.children[1].children[0].style.left );
+    });
+
+    trackSelecPadecimiento.addEventListener('touchend', function(e) {
+        if( this.children[1].children[0].style.left == "0%" ){
+            padecimientoSeleccionado = 0;
+            localStorage.setItem( "padecimientoSeleccionado", "0%" );
+        }
+        if( this.children[1].children[0].style.left == "100%" ){
+            padecimientoSeleccionado = 1;
+            localStorage.setItem( "padecimientoSeleccionado", "100%" );
+        }
+        updateValues();
+    });
+    //----------------------------------------------------slider y localstorage para selector de competencia
+
+    var trackSelecCompetencia = document.getElementById( "selecCompetenciaContainer" ).children[0];
+
+    if(localStorage.getItem("competenciaSeleccionada") != null) {
+            if( localStorage.getItem("competenciaSeleccionada") == "0%" ){
+            trackSelecCompetencia.children[1].children[0].style.left = "0%";
+            $("#knobSCompetencia").css( "left", trackSelecCompetencia.children[1].children[0].style.left );
+            competenciaSeleccionada = 0;
+            }
+
+            if( localStorage.getItem("competenciaSeleccionada") == "50%" ){
+            trackSelecCompetencia.children[1].children[0].style.left = "50%";
+            $("#knobSCompetencia").css( "left", trackSelecCompetencia.children[1].children[0].style.left );
+            competenciaSeleccionada = 1;
+            }
+
+            if( localStorage.getItem("competenciaSeleccionada") == "100%" ){
+            trackSelecCompetencia.children[1].children[0].style.left = "100%";
+            $("#knobSCompetencia").css( "left", trackSelecCompetencia.children[1].children[0].style.left );
+            competenciaSeleccionada = 2;
+            }
+            updateValues();
+       }else{
+           competenciaSeleccionada = 0;
+           trackSelecCompetencia.children[1].children[0].style.left = "0%";
+           $("#knobSCompetencia").css( "left", trackSelecCompetencia.children[1].children[0].style.left );
+       }
+
+    trackSelecCompetencia.addEventListener('touchstart', function(e) {
+        $("#knobSCompetencia").css( "left", this.children[1].children[0].style.left );
+    });
+
+    trackSelecCompetencia.addEventListener('touchmove', function(e) {
+        $("#knobSCompetencia").css( "left", this.children[1].children[0].style.left );
+    });
+
+    trackSelecCompetencia.addEventListener('touchend', function(e) {
+        if( this.children[1].children[0].style.left == "0%" ){
+            competenciaSeleccionada = 0;
+            localStorage.setItem( "competenciaSeleccionada", "0%" );
+        }
+        if( this.children[1].children[0].style.left == "50%" ){
+            competenciaSeleccionada = 1;
+            localStorage.setItem( "competenciaSeleccionada", "50%" );
+        }
+        if( this.children[1].children[0].style.left == "100%" ){
+            competenciaSeleccionada = 2;
+            localStorage.setItem( "competenciaSeleccionada", "100%" );
+        }
+        updateValues();
+    });
+    //----------------------------------------------------slider y localstorage para selector de competencia
+
+    //styling especifico para esta seccion
+    $(".fs-number").css( "display", "inline-block" );
+    $(".fs-number").css( "width", "190px" );
+    $(".fs-number").css( "margin-bottom", "-15px" );
+
+    arrayBtnsLaterales = document.getElementsByClassName( "btnLateral" );
+
+    for( var i = 0; i < arrayBtnsLaterales.length; i++ ){
+
+        arrayBtnsLaterales[ i ].addEventListener( 'touchstart', function(){
+            var stringBackground = "url(imgs/layout/" + this.id + ".png)";
+            this.style.backgroundPosition = "0 -80px";
+        });
+
+        arrayBtnsLaterales[ i ].addEventListener( 'touchend', function(){
+            var stringBackground = "url(imgs/layout/" + this.id + ".png)";
+            this.style.backgroundPosition = "0 0px";
+        });
+      }
+
+});// document ready
+
+function updateValues(){
+
+    $( ".cedulaOtrasComp2" ).html( arrayCompetencias[ competenciaSeleccionada] );
+
+    if( padecimientoSeleccionado == 0 ){
+        $( ".cedulaPadecimiento" ).html( "FANV" );
+        $( "#resultadosFanv" ).show();
+        $( "#resultadosTvp" ).hide();
+        $.ajax({
+            type: "GET",
+            url: "competenciasFanv.xml",
+            dataType: "xml",
+            success: function(xml){
+
+              var costoTotalDabi = 0;
+              var costoTotalComp = 0;
+
+              var costoAdqDabi = 0;
+              var costoAdqComp = 0;
+
+              var costoAdversoDabi = 0;
+              var costoAdversoComp = 0;
+
+              var costoSeguiDabi = 0;
+              var costoSeguiComp = 0;
+
+              var costoMoniDabi = 0;
+              var costoMoniComp = 0;
+
+              var evcDabi = 0;
+              var evcComp = 0;
+
+              var isquemicosDabi = 0;
+              var isquemicosComp = 0;
+
+              var hemorragiasDabi = 0;
+              var hemorragiasComp = 0;
+
+              $(xml).find("Row").each(function () {
+
+                $( this ).find( "costoporpaciente" ).each( function(){
+                  if( $( this ).attr( "nombre") == "dabigatran" ){
+                    $( "#adqDabiFanv" ).html( "$ " + Math.round( ( $( this ).text() * numPacientes ) * 100 ) / 100 );
+                    costoTotalDabi = costoTotalDabi + ( $( this ).text() * numPacientes );
+                    $( "#adqDabiFanv" ).digits();
+                    costoAdqDabi = $( this ).text() * numPacientes;
+                  }
+                });//costoporpaciente
+
+                $( this ).find( "costoeventosadversos" ).each( function(){
+                  if( $( this ).attr( "nombre") == "dabigatran" ){
+                    $( "#evAdvDabiFanv" ).html( "$ " + Math.round( ( $( this ).text() * numPacientes ) * 100 ) / 100 );
+                    costoTotalDabi = costoTotalDabi + ( $( this ).text() * numPacientes );
+                    $( "#evAdvDabiFanv" ).digits();
+                    costoAdversoDabi = $( this ).text() * numPacientes;
+                  }
+                });//costoeventosadversos
+
+                $( this ).find( "costosdeseguimiento" ).each( function(){
+                  if( $( this ).attr( "nombre") == "dabigatran" ){
+                    $( "#seguiDabiFanv" ).html( "$ " + Math.round( ( $( this ).text() * numPacientes ) * 100 ) / 100 );
+                    costoTotalDabi = costoTotalDabi + ( $( this ).text() * numPacientes );
+                    $( "#seguiDabiFanv" ).digits();
+                    costoSeguiDabi = $( this ).text() * numPacientes;
+
+                  }
+                });//costosdeseguimiento
+
+                $( this ).find( "costosdemonitoreo" ).each( function(){
+                  if( $( this ).attr( "nombre") == "dabigatran" ){
+                    $( "#moniDabiFanv" ).html( "$ " + Math.round( ( $( this ).text() * numPacientes ) * 100 ) / 100 );
+                    costoTotalDabi = costoTotalDabi + ( $( this ).text() * numPacientes );
+                    $( "#moniDabiFanv" ).digits();
+                    costoMoniDabi = $( this ).text() * numPacientes;
+                  }
+                });//costosdemonitoreo
+
+                  //costo total
+                  $( "#totalDabiFanv" ).html( "$ " + Math.round( ( costoTotalDabi ) * 100 ) / 100 );
+                  $( "#totalDabiFanv" ).digits();
+                  //costo total
+
+                  $( this ).find( "anosganados" ).each( function(){
+                    if( $( this ).attr( "nombre") == "dabigatran" ){
+                      $( "#anosganadosPpDabiFanv" ).html( $( this ).text() );
+                      $( "#anosganadosPpDabiFanv" ).digits();
+                    }
+                  });//anosganados
+
+                  $( this ).find( "evcisquemico" ).each( function(){
+                    if( $( this ).attr( "nombre") == "dabigatran" ){
+                      $( "#evcisquemicoPpDabiFanv" ).html( Math.round( $( this ).text() * numPacientes ) );
+                      $( "#evcisquemicoPpDabiFanv" ).digits();
+                      evcDabi = $( this ).text() * numPacientes;
+                    }
+                  });//evcisquemico
+
+                  $( this ).find( "ataques" ).each( function(){
+                    if( $( this ).attr( "nombre") == "dabigatran" ){
+                      $( "#ataquesPpDabiFanv" ).html( Math.round( $( this ).text() * numPacientes ) );
+                      $( "#ataquesPpDabiFanv" ).digits();
+                      isquemicosDabi = $( this ).text() * numPacientes;
+                    }
+                  });//ataques
+
+                  $( this ).find( "hemorragia" ).each( function(){
+                    if( $( this ).attr( "nombre") == "dabigatran" ){
+                      $( "#hemorragiaPpDabiFanv" ).html( Math.round( $( this ).text() * numPacientes ) );
+                      $( "#hemorragiaPpDabiFanv" ).digits();
+                      hemorragiasDabi = $( this ).text() * numPacientes;
+                    }
+                  });//hemorragia
+
+                  //--------------------------------------------------------- para costos de competencia
+
+                  $( this ).find( "costoporpaciente" ).each( function(){
+                    if( $( this ).attr( "nombre") == arrayCompetenciasN[ competenciaSeleccionada ] ){
+                      $( "#adqCompFanv" ).html( "$ " + Math.round( ( $( this ).text() * numPacientes ) * 100 ) / 100 );
+                      costoTotalComp = costoTotalComp + ( $( this ).text() * numPacientes );
+                      $( "#adqCompFanv" ).digits();
+                      costoAdqComp = $( this ).text() * numPacientes;
+                    }
+                  });//costoporpaciente
+
+                  $( this ).find( "costoeventosadversos" ).each( function(){
+                    if( $( this ).attr( "nombre") == arrayCompetenciasN[ competenciaSeleccionada ] ){
+                      $( "#evAdvCompFanv" ).html( "$ " + Math.round( ( $( this ).text() * numPacientes ) * 100 ) / 100 );
+                      costoTotalComp = costoTotalComp + ( $( this ).text() * numPacientes );
+                      $( "#evAdvCompFanv" ).digits();
+                      costoAdversoComp = $( this ).text() * numPacientes;
+                    }
+                  });//costoeventosadversos
+
+                  $( this ).find( "costosdeseguimiento" ).each( function(){
+                    if( $( this ).attr( "nombre") == arrayCompetenciasN[ competenciaSeleccionada ] ){
+                      $( "#seguiCompFanv" ).html( "$ " + Math.round( ( $( this ).text() * numPacientes ) * 100 ) / 100 );
+                      costoTotalComp = costoTotalComp + ( $( this ).text() * numPacientes );
+                      $( "#seguiCompFanv" ).digits();
+                      costoSeguiComp = $( this ).text() * numPacientes;
+                    }
+                  });//costosdeseguimiento
+
+                  $( this ).find( "costosdemonitoreo" ).each( function(){
+                    if( $( this ).attr( "nombre") == arrayCompetenciasN[ competenciaSeleccionada ] ){
+                      $( "#moniCompFanv" ).html( "$ " + Math.round( ( $( this ).text() * numPacientes ) * 100 ) / 100 );
+                      costoTotalComp = costoTotalComp + ( $( this ).text() * numPacientes );
+                      $( "#moniCompFanv" ).digits();
+                      costoMoniComp = $( this ).text() * numPacientes;
+                    }
+                  });//costosdemonitoreo
+
+                    //costo total
+                    $( "#totalCompFanv" ).html( "$ " + Math.round( ( costoTotalComp ) * 100 ) / 100 );
+                    $( "#totalCompFanv" ).digits();
+                    //costo total
+
+                    $( this ).find( "anosganados" ).each( function(){
+                      if( $( this ).attr( "nombre") == arrayCompetenciasN[ competenciaSeleccionada ] ){
+                        $( "#anosganadosPpCompFanv" ).html( $( this ).text() );
+                        $( "#anosganadosPpCompFanv" ).digits();
+                      }
+                    });//anosganados
+
+                    $( this ).find( "evcisquemico" ).each( function(){
+                      if( $( this ).attr( "nombre") == arrayCompetenciasN[ competenciaSeleccionada ] ){
+                        $( "#evcisquemicoPpCompFanv" ).html( Math.round( $( this ).text() * numPacientes ) );
+                        $( "#evcisquemicoPpCompFanv" ).digits();
+                        evcComp = $( this ).text() * numPacientes;
+                      }
+                    });//evcisquemico
+
+                    $( this ).find( "ataques" ).each( function(){
+                      if( $( this ).attr( "nombre") == arrayCompetenciasN[ competenciaSeleccionada ] ){
+                        $( "#ataquesPpCompFanv" ).html( Math.round( $( this ).text() * numPacientes ) );
+                        $( "#ataquesPpCompFanv" ).digits();
+                        isquemicosComp = $( this ).text() * numPacientes;
+                      }
+                    });//ataques
+
+                    $( this ).find( "hemorragia" ).each( function(){
+                      if( $( this ).attr( "nombre") == arrayCompetenciasN[ competenciaSeleccionada ] ){
+                        $( "#hemorragiaPpCompFanv" ).html( Math.round( $( this ).text() * numPacientes ) );
+                        $( "#hemorragiaPpCompFanv" ).digits();
+                        hemorragiasComp = $( this ).text() * numPacientes;
+                      }
+                    });//hemorragia
+                  }); // termina Row each
+
+                  $( "#evcEvitadosFanv" ).html( Math.round( evcComp - evcDabi ) );
+                  $( "#isquemicosEvitadosFanv" ).html( Math.round( isquemicosComp - isquemicosDabi ) );
+                  $( "#hemorragiasEvitadosFanv" ).html( Math.round( hemorragiasComp - hemorragiasDabi ) );
+
+                  //----------------------------------------- gráfica
+                  var alturaAdqComp = (costoAdqComp * 350) / costoTotalComp;
+                  $( ".barra1c1" ).css( "height", alturaAdqComp + "px" );
+
+                  var alturaAdversoComp = (costoAdversoComp * 350) / costoTotalComp;
+                  $( ".barra1c2" ).css( "height", alturaAdversoComp + "px" );
+
+                  var alturaSeguiComp = (costoSeguiComp * 350) / costoTotalComp;
+                  $( ".barra1c3" ).css( "height", alturaSeguiComp + "px" );
+
+                  var alturaMoniComp = (costoMoniComp * 350) / costoTotalComp;
+                  $( ".barra1c4" ).css( "height", alturaMoniComp + "px" );
+
+                  $( ".barra1c5" ).hide();
+                  //var alturaAdversosComp = (costoAdversosComp * 400) / costoTotalComp;
+                  $( ".barra1c5" ).css( "height", "0px" );
+
+                  var cedulaCounter = 0;
+                  var arrayCedulas = [ "Adquisición", "E. Adversos", "Seguimiento", "Monitoreo" ];
+                  var arrayCostosComp = [ costoAdqComp, costoAdversoComp, costoSeguiComp, costoMoniComp ];
+                  $( '#contBarra1' ).children().each( function(){
+                    if( cedulaCounter % 2 == 0 ){
+                    $( this ).children( ".cedulaBarra" ).remove();
+                    $( this ).append( "<div class='cedulaBarra' style='z-index:" + Math.round( Math.random() * 10 ) + "; -webkit-transform: translateY( " + (($( this ).height() / 2) - 20) + "px );'>" + arrayCedulas[ 4 - cedulaCounter ] + "<br>$ <span class='cifraCedulaBarra'>" + ( Math.round( arrayCostosComp[ 4 - cedulaCounter ] * 100 ) / 100 ) + "</span></div>" );
+                    $( ".cifraCedulaBarra" ).digits();
+                  }else{
+                    $( this ).children( ".cedulaBarra2" ).remove();
+                      $( this ).append( "<div class='cedulaBarra2' style='z-index:" + Math.round( Math.random() * 10 ) + "; -webkit-transform: translateY( " + (($( this ).height() / 2) - 20) + "px );'>" + arrayCedulas[ 4 - cedulaCounter ] + "<br>$ <span class='cifraCedulaBarra'>" + ( Math.round( arrayCostosComp[ 4 - cedulaCounter ] * 100 ) / 100 ) + "</span></div>" );
+                    $( ".cifraCedulaBarra" ).digits();
+                  }
+                  cedulaCounter++;
+                  });
+
+
+                  var alturaAdqDabi = (costoAdqDabi * 350) / costoTotalComp;
+                  $( ".barra2c1" ).css( "height", alturaAdqDabi + "px" );
+
+                  var alturaAdversoDabi = (costoAdversoDabi * 350) / costoTotalComp;
+                  $( ".barra2c2" ).css( "height", alturaAdversoDabi + "px" );
+
+                  var alturaSeguiDabi = (costoSeguiDabi * 350) / costoTotalComp;
+                  $( ".barra2c3" ).css( "height", alturaSeguiDabi + "px" );
+
+                  var alturaMoniDabi = (costoMoniDabi * 350) / costoTotalComp;
+                  $( ".barra2c4" ).css( "height", alturaMoniDabi + "px" );
+
+                  $( ".barra2c5" ).hide();
+                  //var alturaAdversosDabi = (costoAdversosDabi * 400) / costoTotalComp;
+                  $( ".barra2c5" ).css( "height", "0px" );
+
+                  var cedulaCounter = 0;
+                  var arrayCostosComp = [ costoAdqComp, costoAdversoComp, costoSeguiComp, costoMoniComp ];
+                  $( '#contBarra2' ).children().each( function(){
+                    if( cedulaCounter % 2 == 0 ){
+                    $( this ).children( ".cedulaBarra" ).remove();
+                    $( this ).append( "<div class='cedulaBarra' style='z-index:" + Math.round( Math.random() * 10 ) + "; -webkit-transform: translateY( " + (($( this ).height() / 2) - 20) + "px );'>" + arrayCedulas[ 4 - cedulaCounter ] + "<br>$ <span class='cifraCedulaBarra'>" + ( Math.round( arrayCostosComp[ 4 - cedulaCounter ] * 100 ) / 100 ) + "</span></div>" );
+                    $( ".cifraCedulaBarra" ).digits();
+                  }else{
+                    $( this ).children( ".cedulaBarra2" ).remove();
+                      $( this ).append( "<div class='cedulaBarra2' style='z-index:" + Math.round( Math.random() * 10 ) + "; -webkit-transform: translateY( " + (($( this ).height() / 2) - 20) + "px );'>" + arrayCedulas[ 4 - cedulaCounter ] + "<br>$ <span class='cifraCedulaBarra'>" + ( Math.round( arrayCostosComp[ 4 - cedulaCounter ] * 100 ) / 100 ) + "</span></div>" );
+                    $( ".cifraCedulaBarra" ).digits();
+                  }
+                  cedulaCounter++;
+                  });
+
+                  //----------------------------------------- gráfica
+
+                  $( ".numPacientes" ).html( "$ " +  Math.round( ( costoTotalComp - costoTotalDabi ) * 100 ) / 100 );
+                  $( ".numPacientes" ).digits();
+
+            }//termina success de xml
+        }); //termina AJAX Fanv
+    }
+
+    if( padecimientoSeleccionado == 1 ){
+        $( ".cedulaPadecimiento" ).html( "TVP/EP" );
+        $( "#resultadosFanv" ).hide();
+        $( "#resultadosTvp" ).show();
+        $.ajax({
+            type: "GET",
+            url: "competenciasTvp.xml",
+            dataType: "xml",
+            success: function(xml){
+
+              var costoTotalDabi = 0;
+              var costoTotalComp = 0;
+
+              var costoAdqDabi = 0;
+              var costoAdqComp = 0;
+
+              var costoHospiDabi = 0;
+              var costoHospiComp = 0;
+
+              var costoAdminDabi = 0;
+              var costoAdminComp = 0;
+
+              var costoRecurreDabi = 0;
+              var costoRecurreComp = 0;
+
+              var costoAdversosDabi = 0;
+              var costoAdversosComp = 0;
+
+              var eventossangradoDabi = 0;
+              var eventossangradoComp = 0;
+
+              var muertessangradoDabi = 0;
+              var muertessangradoComp = 0;
+
+              var infartoDabi = 0;
+              var infartoComp = 0;
+
+              var anginaDabi = 0;
+              var anginaComp = 0;
+
+              var sindromeDabi = 0;
+              var sindromeComp = 0;
+
+              $(xml).find("Row").each(function () {
+
+                $( this ).find( "costoporpaciente" ).each( function(){
+                  if( $( this ).attr( "nombre") == "dabigatran" ){
+                    $( "#adqDabiTvp" ).html( "$ " + Math.round( ( $( this ).text() * numPacientes ) * 100 ) / 100 );
+                    costoTotalDabi = costoTotalDabi + ( $( this ).text() * numPacientes );
+                    $( "#adqDabiTvp" ).digits();
+                    costoAdqDabi = $( this ).text() * numPacientes;
+                  }
+                });//costoporpaciente
+
+                $( this ).find( "hospitalarios" ).each( function(){
+                  if( $( this ).attr( "nombre") == "dabigatran" ){
+                    $( "#hospitalariosDabiTvp" ).html( "$ " + Math.round( ( $( this ).text() * numPacientes ) * 100 ) / 100 );
+                    costoTotalDabi = costoTotalDabi + ( $( this ).text() * numPacientes );
+                    $( "#hospitalariosDabiTvp" ).digits();
+                    costoHospiDabi = $( this ).text() * numPacientes;
+                  }
+                });//hospitalarios
+
+                $( this ).find( "administracion" ).each( function(){
+                  if( $( this ).attr( "nombre") == "dabigatran" ){
+                    $( "#administracionDabiTvp" ).html( "$ " + Math.round( ( $( this ).text() * numPacientes ) * 100 ) / 100 );
+                    costoTotalDabi = costoTotalDabi + ( $( this ).text() * numPacientes );
+                    $( "#administracionDabiTvp" ).digits();
+                    costoAdminDabi = $( this ).text() * numPacientes;
+                  }
+                });//administracion
+
+                $( this ).find( "recurrencia" ).each( function(){
+                  if( $( this ).attr( "nombre") == "dabigatran" ){
+                    $( "#recurrenciaDabiTvp" ).html( "$ " + Math.round( ( $( this ).text() * numPacientes ) * 100 ) / 100 );
+                    costoTotalDabi = costoTotalDabi + ( $( this ).text() * numPacientes );
+                    $( "#recurrenciaDabiTvp" ).digits();
+                    costoRecurreDabi = $( this ).text() * numPacientes;
+                  }
+                });//recurrencia
+
+                $( this ).find( "adversos" ).each( function(){
+                  if( $( this ).attr( "nombre") == "dabigatran" ){
+                    $( "#adversosDabiTvp" ).html( "$ " + Math.round( ( $( this ).text() * numPacientes ) * 100 ) / 100 );
+                    costoTotalDabi = costoTotalDabi + ( $( this ).text() * numPacientes );
+                    $( "#adversosDabiTvp" ).digits();
+                    costoAdversosDabi = $( this ).text() * numPacientes;
+                  }
+                });//adversos
+
+                  //costo total
+                  $( "#totalDabiTvp" ).html( "$ " + Math.round( ( costoTotalDabi ) * 100 ) / 100 );
+                  $( "#totalDabiTvp" ).digits();
+                  //costo total
+
+                  $( this ).find( "anosganados" ).each( function(){
+                    if( $( this ).attr( "nombre") == "dabigatran" ){
+                      $( "#anosganadosPpDabiTvp" ).html( $( this ).text() );
+                      $( "#anosganadosPpDabiTvp" ).digits();
+                    }
+                  });//anosganados
+
+                  $( this ).find( "eventossangrado" ).each( function(){
+                    if( $( this ).attr( "nombre") == "dabigatran" ){
+                      $( "#eventossangradoPpDabiTvp" ).html( Math.round( $( this ).text() * numPacientes ) );
+                      $( "#eventossangradoPpDabiTvp" ).digits();
+                      eventossangradoDabi = $( this ).text() * numPacientes;
+                    }
+                  });//eventossangrado
+
+                  $( this ).find( "muertessangrado" ).each( function(){
+                    if( $( this ).attr( "nombre") == "dabigatran" ){
+                      $( "#muertessangradoPpDabiTvp" ).html( Math.round( $( this ).text() * numPacientes ) );
+                      $( "#muertessangradoPpDabiTvp" ).digits();
+                      muertessangradoDabi = $( this ).text() * numPacientes;
+                    }
+                  });//muertessangrado
+
+                  $( this ).find( "infarto" ).each( function(){
+                    if( $( this ).attr( "nombre") == "dabigatran" ){
+                      $( "#infartoPpDabiTvp" ).html( Math.round( $( this ).text() * numPacientes ) );
+                      $( "#infartoPpDabiTvp" ).digits();
+                      infartoDabi = $( this ).text() * numPacientes;
+                    }
+                  });//infarto
+
+                  $( this ).find( "angina" ).each( function(){
+                    if( $( this ).attr( "nombre") == "dabigatran" ){
+                      $( "#anginaPpDabiTvp" ).html( Math.round( $( this ).text() * numPacientes ) );
+                      $( "#anginaPpDabiTvp" ).digits();
+                      anginaDabi = $( this ).text() * numPacientes;
+                    }
+                  });//angina
+
+                  $( this ).find( "sindrome" ).each( function(){
+                    if( $( this ).attr( "nombre") == "dabigatran" ){
+                      $( "#sindromePpDabiTvp" ).html( Math.round( $( this ).text() * numPacientes ) );
+                      $( "#sindromePpDabiTvp" ).digits();
+                      sindromeDabi = $( this ).text() * numPacientes;
+                    }
+                  });//sindrome
+
+                  //--------------------------------------------------------- para costos de competencia
+
+                  $( this ).find( "costoporpaciente" ).each( function(){
+                    if( $( this ).attr( "nombre") == arrayCompetenciasN[ competenciaSeleccionada ] ){
+                      $( "#adqCompTvp" ).html( "$ " + Math.round( ( $( this ).text() * numPacientes ) * 100 ) / 100 );
+                      costoTotalComp = costoTotalComp + ( $( this ).text() * numPacientes );
+                      $( "#adqCompTvp" ).digits();
+                      costoAdqComp = $( this ).text() * numPacientes;
+                    }
+                  });//costoporpaciente
+
+                  $( this ).find( "hospitalarios" ).each( function(){
+                    if( $( this ).attr( "nombre") == arrayCompetenciasN[ competenciaSeleccionada ] ){
+                      $( "#hospitalariosCompTvp" ).html( "$ " + Math.round( ( $( this ).text() * numPacientes ) * 100 ) / 100 );
+                      costoTotalComp = costoTotalComp + ( $( this ).text() * numPacientes );
+                      $( "#hospitalariosCompTvp" ).digits();
+                      costoHospiComp = $( this ).text() * numPacientes;
+                    }
+                  });//hospitalarios
+
+                  $( this ).find( "administracion" ).each( function(){
+                    if( $( this ).attr( "nombre") == arrayCompetenciasN[ competenciaSeleccionada ] ){
+                      $( "#administracionCompTvp" ).html( "$ " + Math.round( ( $( this ).text() * numPacientes ) * 100 ) / 100 );
+                      costoTotalComp = costoTotalComp + ( $( this ).text() * numPacientes );
+                      $( "#administracionCompTvp" ).digits();
+                      costoAdminComp = $( this ).text() * numPacientes;
+                    }
+                  });//administracion
+
+                  $( this ).find( "recurrencia" ).each( function(){
+                    if( $( this ).attr( "nombre") == arrayCompetenciasN[ competenciaSeleccionada ] ){
+                      $( "#recurrenciaCompTvp" ).html( "$ " + Math.round( ( $( this ).text() * numPacientes ) * 100 ) / 100 );
+                      costoTotalComp = costoTotalComp + ( $( this ).text() * numPacientes );
+                      $( "#recurrenciaCompTvp" ).digits();
+                      costoRecurreComp = $( this ).text() * numPacientes;
+                    }
+                  });//recurrencia
+
+                  $( this ).find( "adversos" ).each( function(){
+                    if( $( this ).attr( "nombre") == arrayCompetenciasN[ competenciaSeleccionada ] ){
+                      $( "#adversosCompTvp" ).html( "$ " + Math.round( ( $( this ).text() * numPacientes ) * 100 ) / 100 );
+                      costoTotalComp = costoTotalComp + ( $( this ).text() * numPacientes );
+                      $( "#adversosCompTvp" ).digits();
+                      costoAdversosComp = $( this ).text() * numPacientes;
+                    }
+                  });//adversos
+
+                    //costo total
+                    $( "#totalCompTvp" ).html( "$ " + Math.round( ( costoTotalComp ) * 100 ) / 100 );
+                    $( "#totalCompTvp" ).digits();
+                    //costo total
+
+                    $( this ).find( "anosganados" ).each( function(){
+                      if( $( this ).attr( "nombre") == arrayCompetenciasN[ competenciaSeleccionada ] ){
+                        $( "#anosganadosPpCompTvp" ).html( $( this ).text() );
+                        $( "#anosganadosPpCompTvp" ).digits();
+                      }
+                    });//anosganados
+
+                    $( this ).find( "eventossangrado" ).each( function(){
+                      if( $( this ).attr( "nombre") == arrayCompetenciasN[ competenciaSeleccionada ] ){
+                        $( "#eventossangradoPpCompTvp" ).html( Math.round( $( this ).text() * numPacientes ) );
+                        $( "#eventossangradoPpCompTvp" ).digits();
+                        eventossangradoComp = $( this ).text() * numPacientes;
+                      }
+                    });//eventossangrado
+
+                    $( this ).find( "muertessangrado" ).each( function(){
+                      if( $( this ).attr( "nombre") == arrayCompetenciasN[ competenciaSeleccionada ] ){
+                        $( "#muertessangradoPpCompTvp" ).html( Math.round( $( this ).text() * numPacientes ) );
+                        $( "#muertessangradoPpCompTvp" ).digits();
+                        muertessangradoComp = $( this ).text() * numPacientes;
+                      }
+                    });//muertessangrado
+
+                    $( this ).find( "infarto" ).each( function(){
+                      if( $( this ).attr( "nombre") == arrayCompetenciasN[ competenciaSeleccionada ] ){
+                        $( "#infartoPpCompTvp" ).html( Math.round( $( this ).text() * numPacientes ) );
+                        $( "#infartoPpCompTvp" ).digits();
+                        infartoComp = $( this ).text() * numPacientes;
+                      }
+                    });//infarto
+
+                    $( this ).find( "angina" ).each( function(){
+                      if( $( this ).attr( "nombre") == arrayCompetenciasN[ competenciaSeleccionada ] ){
+                        $( "#anginaPpCompTvp" ).html( Math.round( $( this ).text() * numPacientes ) );
+                        $( "#anginaPpCompTvp" ).digits();
+                        anginaComp = $( this ).text() * numPacientes;
+                      }
+                    });//angina
+
+                    $( this ).find( "sindrome" ).each( function(){
+                      if( $( this ).attr( "nombre") == arrayCompetenciasN[ competenciaSeleccionada ] ){
+                        $( "#sindromePpCompTvp" ).html( Math.round( $( this ).text() * numPacientes ) );
+                        $( "#sindromePpCompTvp" ).digits();
+                        sindromeComp = $( this ).text() * numPacientes;
+                      }
+                    });//sindrome
+                  }); // termina Row each
+
+                  $( "#eventossangradoEvitadosTvp" ).html( Math.round( eventossangradoComp - eventossangradoDabi ) );
+                  $( "#muertessangradoEvitadosTvp" ).html( Math.round( muertessangradoComp - muertessangradoDabi ) );
+                  $( "#infartoEvitadosTvp" ).html( Math.round( infartoComp - infartoDabi ) );
+                  $( "#anginaEvitadosTvp" ).html( Math.round( anginaComp - anginaDabi ) );
+                  $( "#sindromeEvitadosTvp" ).html( Math.round( sindromeComp - sindromeDabi ) );
+
+                  //----------------------------------------- gráfica
+                  var alturaAdqComp = (costoAdqComp * 350) / costoTotalComp;
+                  $( ".barra1c1" ).css( "height", alturaAdqComp + "px" );
+
+                  var alturaHospiComp = (costoHospiComp * 350) / costoTotalComp;
+                  $( ".barra1c2" ).css( "height", alturaHospiComp + "px" );
+
+                  var alturaAdminComp = (costoAdminComp * 350) / costoTotalComp;
+                  $( ".barra1c3" ).css( "height", alturaAdminComp + "px" );
+
+                  var alturaRecurreComp = (costoRecurreComp * 350) / costoTotalComp;
+                  $( ".barra1c4" ).css( "height", alturaRecurreComp + "px" );
+
+                  $( ".barra1c5" ).show();
+                  var alturaAdversosComp = (costoAdversosComp * 350) / costoTotalComp;
+                  $( ".barra1c5" ).css( "height", alturaAdversosComp + "px" );
+
+                  var cedulaCounter = 0;
+                  var arrayCedulas = [ "Adquisición", "Hospitalización", "Administración", "E. recurrentes", "E. adversos" ];
+                  var arrayCostosComp = [ costoAdqComp, costoHospiComp, costoAdminComp, costoRecurreComp, costoAdversosComp ];
+                  $( '#contBarra1' ).children().each( function(){
+                    if( cedulaCounter % 2 == 0 ){
+                    $( this ).children( ".cedulaBarra" ).remove();
+                    $( this ).append( "<div class='cedulaBarra' style='z-index:" + Math.round( Math.random() * 10 ) + "; -webkit-transform: translateY( " + (($( this ).height() / 2) - 20) + "px );'>" + arrayCedulas[ 4 - cedulaCounter ] + "<br>$ <span class='cifraCedulaBarra'>" + ( Math.round( arrayCostosComp[ 4 - cedulaCounter ] * 100 ) / 100 ) + "</span></div>" );
+                    $( ".cifraCedulaBarra" ).digits();
+                  }else{
+                    $( this ).children( ".cedulaBarra2" ).remove();
+                      $( this ).append( "<div class='cedulaBarra2' style='z-index:" + Math.round( Math.random() * 10 ) + "; -webkit-transform: translateY( " + (($( this ).height() / 2) - 20) + "px );'>" + arrayCedulas[ 4 - cedulaCounter ] + "<br>$ <span class='cifraCedulaBarra'>" + ( Math.round( arrayCostosComp[ 4 - cedulaCounter ] * 100 ) / 100 ) + "</span></div>" );
+                    $( ".cifraCedulaBarra" ).digits();
+                  }
+                  cedulaCounter++;
+                  });
+
+
+                  var alturaAdqDabi = (costoAdqDabi * 350) / costoTotalComp;
+                  $( ".barra2c1" ).css( "height", alturaAdqDabi + "px" );
+
+                  var alturaHospiDabi = (costoHospiDabi * 350) / costoTotalComp;
+                  $( ".barra2c2" ).css( "height", alturaHospiDabi + "px" );
+
+                  var alturaAdminDabi = (costoAdminDabi * 350) / costoTotalComp;
+                  $( ".barra2c3" ).css( "height", alturaAdminDabi + "px" );
+
+                  var alturaRecurreDabi = (costoRecurreDabi * 350) / costoTotalComp;
+                  $( ".barra2c4" ).css( "height", alturaRecurreDabi + "px" );
+
+                  $( ".barra2c5" ).show();
+                  var alturaAdversosDabi = (costoAdversosDabi * 350) / costoTotalComp;
+                  $( ".barra2c5" ).css( "height", alturaAdversosDabi + "px" );
+
+                  var cedulaCounter = 0;
+                  var arrayCostosComp = [ costoAdqDabi, costoHospiDabi, costoAdminDabi, costoRecurreDabi, costoAdversosDabi ];
+                  $( '#contBarra2' ).children().each( function(){
+                    if( cedulaCounter % 2 == 0 ){
+                    $( this ).children( ".cedulaBarra" ).remove();
+                    $( this ).append( "<div class='cedulaBarra' style='z-index:" + Math.round( Math.random() * 10 ) + "; -webkit-transform: translateY( " + (($( this ).height() / 2) - 20) + "px );'>" + arrayCedulas[ 4 - cedulaCounter ] + "<br>$ <span class='cifraCedulaBarra'>" + ( Math.round( arrayCostosComp[ 4 - cedulaCounter ] * 100 ) / 100 ) + "</span></div>" );
+                    $( ".cifraCedulaBarra" ).digits();
+                  }else{
+                    $( this ).children( ".cedulaBarra2" ).remove();
+                      $( this ).append( "<div class='cedulaBarra2' style='z-index:" + Math.round( Math.random() * 10 ) + "; -webkit-transform: translateY( " + (($( this ).height() / 2) - 20) + "px );'>" + arrayCedulas[ 4 - cedulaCounter ] + "<br>$ <span class='cifraCedulaBarra'>" + ( Math.round( arrayCostosComp[ 4 - cedulaCounter ] * 100 ) / 100 ) + "</span></div>" );
+                    $( ".cifraCedulaBarra" ).digits();
+                  }
+                  cedulaCounter++;
+                  });
+
+                  //----------------------------------------- gráfica
+
+                  $( ".numPacientes" ).html( "$ " +  Math.round( ( costoTotalComp - costoTotalDabi ) * 100 ) / 100 );
+                  $( ".numPacientes" ).digits();
+
+            }//termina success de xml
+        }); //termina AJAX Tvp
+    }
+
+}//updateValues
+
+$.fn.digits = function(){
+    return this.each(function(){
+        $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );
+    })
+}
+</script>
+
+</html>

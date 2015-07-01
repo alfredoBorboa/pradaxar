@@ -18,7 +18,7 @@
 <link rel="stylesheet" type="text/css" href="fonts.css">
 <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="style.css">
-<title>Prevalencia</title>
+<title>Costo de tratamiento</title>
 </head>
 
 <body>
@@ -27,13 +27,32 @@
 <div id="contentInfo">
 <div id="infoViewport">
 
-    <div id="headerViewport"><i class="fa fa-caret-right"></i>&nbsp;&nbsp;&nbsp;PREVALENCIA&nbsp;&nbsp;&nbsp;<i class="fa fa-caret-left"></i></div>
+    <div id="headerViewport"><i class="fa fa-caret-right"></i>&nbsp;&nbsp;&nbsp;COSTO DE TRATAMIENTO&nbsp;&nbsp;&nbsp;<i class="fa fa-caret-left"></i></div>
 
-    <div id="inputPrevalencia">Prevalencia de FA en <span class="cedulaPadecimiento"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="number" id="inputPrevalenciaN">%</div>
+    <!--<div id="inputPrevalencia">Prevalencia de FA en <span class="cedulaPadecimiento"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="number" id="inputPrevalenciaN">%</div>
 
     <div id="contentPacientesATratar">Número potencial de pacientes con <span class="cedulaPadecimiento"></span>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="numPacientesATratar"></span></div>
 
-    <div id="disclaimerPrevalencia">Nota: El número potencial de pacientes con <span class="cedulaPadecimiento"></span> se obtiene al multiplicar la prevalencia por el número potencial calculado en pacientes con <span class="cedulaPadecimiento"></span></div>
+    <div id="disclaimerPrevalencia">Nota: El número potencial de pacientes con <span class="cedulaPadecimiento"></span> se obtiene al multiplicar la prevalencia por el número potencial calculado en pacientes con <span class="cedulaPadecimiento"></span></div>-->
+
+    <div id="tablaCostosFijos">
+      COSTOS DE INTERVENCION POR PACIENTE<br><br><br>
+      <div class="divTablaCostosFijos"></div><div class="divTablaCostosFijos"></div><div class="divTablaCostosFijos"></div><div class="divTablaCostosFijos"></div><div class="divTablaCostosFijos"></div><br>
+      <div class="divTablaCostosFijos2">Adquisición</div><div class="divTablaCostosFijos3">$61,418.78</div><div class="divTablaCostosFijos3">$70,112.93</div><div class="divTablaCostosFijos3">$61,071.79</div><div class="divTablaCostosFijos3">$2,335.89</div><br>
+      <div class="divTablaCostosFijos2">Eventos Adversos</div><div class="divTablaCostosFijos3">$41,214.22</div><div class="divTablaCostosFijos3">$47,516.92</div><div class="divTablaCostosFijos3">$40,603.73</div><div class="divTablaCostosFijos3">$51,904.74</div><br>
+      <div class="divTablaCostosFijos2">Seguimiento</div><div class="divTablaCostosFijos3">$40,418.24</div><div class="divTablaCostosFijos3">$40,990.12</div><div class="divTablaCostosFijos3">$40,873.00</div><div class="divTablaCostosFijos3">$42,447.08</div><br>
+      <div class="divTablaCostosFijos2">Monitoreo</div><div class="divTablaCostosFijos3">$1,173.16</div><div class="divTablaCostosFijos3">$3,512.76</div><div class="divTablaCostosFijos3">$3,536.11</div><div class="divTablaCostosFijos3">$44,566.04</div><br>
+    </div>
+
+    <div id="tablaCostosFijos2">
+      COSTOS DE INTERVENCION POR PACIENTE<br><br><br>
+      <div class="divTablaCostosFijos"></div><div class="divTablaCostosFijos"></div><div class="divTablaCostosFijos"></div><div class="divTablaCostosFijos"></div><div class="divTablaCostosFijos"></div><br>
+      <div class="divTablaCostosFijos2">Adquisición</div><div class="divTablaCostosFijos3">$16,944.00</div><div class="divTablaCostosFijos3">$1,331.00</div><div class="divTablaCostosFijos3">$9,103.00</div><div class="divTablaCostosFijos3">$11,554.00</div><br>
+      <div class="divTablaCostosFijos2">Hospitalización</div><div class="divTablaCostosFijos3">$72,445.00</div><div class="divTablaCostosFijos3">$73,074.00</div><div class="divTablaCostosFijos3">$72,445.00</div><div class="divTablaCostosFijos3">$72,557.00</div><br>
+      <div class="divTablaCostosFijos2">Administración</div><div class="divTablaCostosFijos3">$484.00</div><div class="divTablaCostosFijos3">$14,760.00</div><div class="divTablaCostosFijos3">$484.00</div><div class="divTablaCostosFijos3">$503.00</div><br>
+      <div class="divTablaCostosFijos2">Recurrencia</div><div class="divTablaCostosFijos3">$240.00</div><div class="divTablaCostosFijos3">$227.00</div><div class="divTablaCostosFijos3">$272.00</div><div class="divTablaCostosFijos3">$270.00</div><br>
+      <div class="divTablaCostosFijos2">Eventos Adversos</div><div class="divTablaCostosFijos3">$24,634.00</div><div class="divTablaCostosFijos3">$31,358.00</div><div class="divTablaCostosFijos3">$24,848.00</div><div class="divTablaCostosFijos3">$27,576.00</div><br>
+    </div>
 
     <div id="btnSiguiente">Siguiente</div>
 </div><!--infoViewPort-->
@@ -42,15 +61,15 @@
 <div id="barraLateral">
     <div id="btnPoblacion" class="btnLateral" >
     </div>
-    <div id="btnPrevalencias" style="background-position: 0 -80px" >
+    <div id="btnPrevalencias" class="btnLateral" >
     </div>
-    <div id="btnComparativas" class="btnLateral"  style="opacity:0.4">
+    <div id="btnComparativas" style="background-position: 0 -80px">
     </div>
-    <div id="btnResultados" class="btnLateral" style="opacity:0.4">
+    <div id="btnResultados" class="btnLateral">
     </div>
-    <div id="btnCostos" class="btnLateral" style="opacity:0.4" >
+    <div id="btnCostos" class="btnLateral"  >
     </div>
-    <div id="btnReporte" class="btnLateral" style="opacity:0.4">
+    <div id="btnReporte" class="btnLateral" >
     </div>
     <div id="btnOnoff" class="btnLateral" >
     </div>
@@ -108,6 +127,18 @@ $(document).ready(function () {
       window.location = "poblacion.html";
     });
 
+    $( "#btnPrevalencias" ).on( "touchend", function(){
+      window.location = "prevalencia.html";
+    });
+
+    $( "#btnResultados" ).on( "touchend", function(){
+      window.location = "comparativos.html";
+    });
+
+    $( "#btnCostos" ).on( "touchend", function(){
+      window.location = "resultados.html";
+    });
+
     $( "#cedulaInstitucion" ).html( localStorage.getItem( "cedulaInstitucionManual") );
 
     //----------------------------------------------------slider y localstorage para selector de padecimiento
@@ -158,14 +189,10 @@ $(document).ready(function () {
 
     if( localStorage.getItem( "porcentajePrevalencia") != null ){
       $( "#inputPrevalenciaN" ).val( localStorage.getItem ( "porcentajePrevalencia" ));
-      localStorage.setItem( "numPacientesATratar", ( $( "#inputPrevalenciaN" ).val() / 100 ) * localStorage.getItem( "poblacionAsegurada" ) );
+      //localStorage.setItem( "numPacientesATratar", ( $( "#inputPrevalenciaN" ).val() / 100 ) * localStorage.getItem( "poblacionAsegurada" ) );
       $( "#numPacientesATratar" ).html( Math.round( localStorage.getItem( "numPacientesATratar" ) * 1000 ) / 1000 );
       $( "#numPacientesATratar" ).digits();
     }
-
-    document.getElementById( "inputPrevalenciaN" ).addEventListener( "touchstart", function(){
-        $( "#inputPrevalenciaN" ).val( "" );
-    });
 
     $( "#inputPrevalenciaN" ).keyup( function(){
       if( $( this ).val() > 100 ){
@@ -175,8 +202,8 @@ $(document).ready(function () {
 
       if( $.isNumeric( $( this ).val() ) ){
 
-        localStorage.setItem( "porcentajePrevalencia", $( this ).val() );
-        localStorage.setItem( "numPacientesATratar", ( $( this ).val() / 100 ) * localStorage.getItem( "poblacionAsegurada" ) );
+        //localStorage.setItem( "porcentajePrevalencia", $( this ).val() );
+        //localStorage.setItem( "numPacientesATratar", ( $( this ).val() / 100 ) * localStorage.getItem( "poblacionAsegurada" ) );
         $( "#numPacientesATratar" ).html( Math.round( localStorage.getItem( "numPacientesATratar" ) * 1000 ) / 1000 );
         $( "#numPacientesATratar" ).digits();
 
@@ -212,7 +239,7 @@ $(document).ready(function () {
 
       document.getElementById( "btnSiguiente" ).addEventListener( 'touchend', function(){
             //localStorage.setItem( "poblacionAsegurada", poblacionAsegurada );
-            window.location = "costos.html";
+            window.location = "comparativos.html";
       });
 
 });// document ready
@@ -220,10 +247,14 @@ $(document).ready(function () {
 function updateValues(){
     if( padecimientoSeleccionado == 0 ){
         $( ".cedulaPadecimiento" ).html( "FANV" );
+        $( "#tablaCostosFijos" ).show();
+        $( "#tablaCostosFijos2" ).hide();
     }
 
     if( padecimientoSeleccionado == 1 ){
         $( ".cedulaPadecimiento" ).html( "TVP/EP" );
+        $( "#tablaCostosFijos" ).hide();
+        $( "#tablaCostosFijos2" ).show();
     }
   }
 

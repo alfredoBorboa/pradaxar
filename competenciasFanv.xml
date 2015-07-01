@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+
+   <Row>
+    <costoporpaciente nombre="dabigatran">61418.78</costoporpaciente>
+    <costoporpaciente nombre="rivaroxaban">70112.93</costoporpaciente>
+    <costoporpaciente nombre="apixaban">61071.79</costoporpaciente>
+    <costoporpaciente nombre="warfarina">2335.89</costoporpaciente>
+   </Row>
+
+   <Row>
+    <costoeventosadversos nombre="dabigatran">41214.22</costoeventosadversos>
+    <costoeventosadversos nombre="rivaroxaban">47516.92</costoeventosadversos>
+    <costoeventosadversos nombre="apixaban">40603.73</costoeventosadversos>
+    <costoeventosadversos nombre="warfarina">51904.74</costoeventosadversos>
+   </Row>
+
+   <Row>
+    <costosdeseguimiento nombre="dabigatran">40418.24</costosdeseguimiento>
+    <costosdeseguimiento nombre="rivaroxaban">40990.12</costosdeseguimiento>
+    <costosdeseguimiento nombre="apixaban">40873.60</costosdeseguimiento>
+    <costosdeseguimiento nombre="warfarina">42447.08</costosdeseguimiento>
+   </Row>
+
+   <Row>
+    <costosdemonitoreo nombre="dabigatran">1173.16</costosdemonitoreo>
+    <costosdemonitoreo nombre="rivaroxaban">3512.76</costosdemonitoreo>
+    <costosdemonitoreo nombre="apixaban">3536.11</costosdemonitoreo>
+    <costosdemonitoreo nombre="warfarina">44566.04</costosdemonitoreo>
+   </Row>
+
+   <Row>
+    <evcisquemico nombre="dabigatran">0.101427</evcisquemico >
+    <evcisquemico  nombre="rivaroxaban">0.12325446</evcisquemico >
+    <evcisquemico  nombre="apixaban">0.10982299</evcisquemico >
+    <evcisquemico  nombre="warfarina">0.12894464</evcisquemico >
+   </Row>
+
+   <Row>
+    <emboliasistemica nombre="dabigatran">0.0125</emboliasistemica >
+    <emboliasistemica  nombre="rivaroxaban">0.00922786</emboliasistemica >
+    <emboliasistemica  nombre="apixaban">0.01523677</emboliasistemica >
+    <emboliasistemica nombre="warfarina">0.01835972</emboliasistemica >
+   </Row>
+
+   <Row>
+    <ataques nombre="dabigatran">0.0689334</ataques >
+    <ataques  nombre="rivaroxaban">0.06840375</ataques >
+    <ataques  nombre="apixaban">0.06878684</ataques >
+    <ataques nombre="warfarina">0.08016625</ataques >
+   </Row>
+
+   <Row>
+    <hemorragia nombre="dabigatran">0.02255561</hemorragia >
+    <hemorragia  nombre="rivaroxaban">0.04627607</hemorragia >
+    <hemorragia  nombre="apixaban">0.03027977</hemorragia >
+    <hemorragia nombre="warfarina">0.06137177</hemorragia >
+   </Row>
+
+   <Row>
+    <infarto nombre="dabigatran">0.07502672</infarto >
+    <infarto  nombre="rivaroxaban">0.05765063</infarto >
+    <infarto  nombre="apixaban">0.05482125</infarto >
+    <infarto nombre="warfarina">0.06015809</infarto >
+   </Row>
+
+   <Row>
+    <anosganados nombre="dabigatran">6.94</anosganados >
+    <anosganados  nombre="rivaroxaban">6.87</anosganados >
+    <anosganados  nombre="apixaban">6.92</anosganados >
+    <anosganados nombre="warfarina">6.84</anosganados >
+   </Row>
+
+   </Workbook>

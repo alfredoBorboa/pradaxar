@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+
+   <Row>
+    <costoporpaciente nombre="dabigatran">16944.00</costoporpaciente>
+    <costoporpaciente nombre="rivaroxaban">1331.00</costoporpaciente>
+    <costoporpaciente nombre="apixaban">9103.00</costoporpaciente>
+    <costoporpaciente nombre="warfarina">11554.00</costoporpaciente>
+   </Row>
+
+   <Row>
+    <hospitalarios nombre="dabigatran">72445.00</hospitalarios>
+    <hospitalarios nombre="rivaroxaban">73074.00</hospitalarios>
+    <hospitalarios nombre="apixaban">72445.00</hospitalarios>
+    <hospitalarios nombre="warfarina">72557.00</hospitalarios>
+   </Row>
+
+   <Row>
+    <administracion nombre="dabigatran">484.00</administracion>
+    <administracion nombre="rivaroxaban">14760.00</administracion>
+    <administracion nombre="apixaban">484.00</administracion>
+    <administracion nombre="warfarina">503.00</administracion>
+   </Row>
+
+   <Row>
+    <recurrencia nombre="dabigatran">240.00</recurrencia>
+    <recurrencia nombre="rivaroxaban">227.00</recurrencia>
+    <recurrencia nombre="apixaban">272.00</recurrencia>
+    <recurrencia nombre="warfarina">270.00</recurrencia>
+   </Row>
+
+   <Row>
+    <adversos nombre="dabigatran">24634.00</adversos >
+    <adversos  nombre="rivaroxaban">31358.00</adversos >
+    <adversos  nombre="apixaban">24848.00</adversos >
+    <adversos  nombre="warfarina">27576.00</adversos >
+   </Row>
+
+   <Row>
+    <evc nombre="dabigatran">0.206305</evc >
+    <evc nombre="rivaroxaban">0.193382</evc >
+    <evc nombre="apixaban">0.230339</evc >
+    <evc nombre="warfarina">0.229236</evc >
+   </Row>
+
+   <Row>
+    <eventossangrado nombre="dabigatran">0.0955</eventossangrado >
+    <eventossangrado nombre="rivaroxaban">0.6043</eventossangrado >
+    <eventossangrado nombre="apixaban">0.0985</eventossangrado >
+    <eventossangrado nombre="warfarina">0.1726</eventossangrado >
+   </Row>
+
+   <Row>
+    <muertessangrado nombre="dabigatran">0.0005</muertessangrado >
+    <muertessangrado nombre="rivaroxaban">0.0045</muertessangrado >
+    <muertessangrado nombre="apixaban">0.0005</muertessangrado >
+    <muertessangrado nombre="warfarina">0.0007</muertessangrado >
+   </Row>
+
+   <Row>
+    <infarto nombre="dabigatran">0</infarto >
+    <infarto  nombre="rivaroxaban">0</infarto >
+    <infarto  nombre="apixaban">0</infarto >
+    <infarto nombre="warfarina">0.0007</infarto >
+   </Row>
+
+   <Row>
+    <angina nombre="dabigatran">0</angina >
+    <angina  nombre="rivaroxaban">0</angina >
+    <angina  nombre="apixaban">0</angina >
+    <angina nombre="warfarina">0</angina >
+   </Row>
+
+   <Row>
+    <sindrome nombre="dabigatran">0.0608</sindrome >
+    <sindrome  nombre="rivaroxaban">0.0602</sindrome >
+    <sindrome  nombre="apixaban">0.0617</sindrome >
+    <sindrome nombre="warfarina">0.0613</sindrome >
+   </Row>
+
+   <Row>
+    <anosganados nombre="dabigatran">4.496</anosganados >
+    <anosganados  nombre="rivaroxaban">4.481</anosganados >
+    <anosganados  nombre="apixaban">4.486</anosganados >
+    <anosganados nombre="warfarina">4.483</anosganados >
+   </Row>
+
+   </Workbook>

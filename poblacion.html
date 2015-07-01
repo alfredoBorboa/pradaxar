@@ -2,6 +2,9 @@
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!--<meta name="viewport" content="width=device-height, height=device-width, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />-->
 <script src="jquery.js"></script>
 <script src="formstone/js/core.js"></script>
 <script src="formstone/js/touch.js"></script>
@@ -105,7 +108,9 @@
     <div id="contentManual">
         <form id="formManual" style="padding-top:100px">
             <div class="tituloForm" style="margin-top:0px"><i class="fa fa-caret-right"></i>&nbsp;&nbsp;NO. PERSONAS</div>
+            <label>
             <input type="number" id="inputManual">
+                </label>
         </form>
     </div><!-- contentManual-->
 
@@ -116,15 +121,15 @@
 <div id="barraLateral">
     <div id="btnPoblacion" style="background-position: 0 -80px" >
     </div>
-    <div id="btnPrevalencias" class="btnLateral" >
+    <div id="btnPrevalencias" class="btnLateral" style="opacity:0.4">
     </div>
-    <div id="btnComparativas" class="btnLateral" >
+    <div id="btnComparativas" class="btnLateral" style="opacity:0.4">
     </div>
-    <div id="btnResultados" class="btnLateral" >
+    <div id="btnResultados" class="btnLateral" style="opacity:0.4">
     </div>
-    <div id="btnCostos" class="btnLateral" >
+    <div id="btnCostos" class="btnLateral" style="opacity:0.4">
     </div>
-    <div id="btnReporte" class="btnLateral" >
+    <div id="btnReporte" class="btnLateral" style="opacity:0.4">
     </div>
     <div id="btnOnoff" class="btnLateral" >
     </div>
@@ -148,20 +153,19 @@
     <div id="selecPadecimientoContainer">
         <input type="range" id="inputPadecimiento" min="0" max="50" step="50" data-range-options='{"labels":false}'>
 
-        <div id="knobSPadecimiento"><img src="imgs/poblacion/knobPadecimiento.png" width="60"/></div>
+        <div id="knobSPadecimiento"><img src="imgs/poblacion/knobPadecimiento.png" width="45"/></div>
 
         <div id="imgSelecPadecimiento">
-            <img src="imgs/poblacion/selecPadecimiento.png"/ width="190">
+            <img src="imgs/poblacion/selecPadecimiento.png"/ width="150">
         </div>
-        FANV &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TVP/EP
-    </div>
+        FANV &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TVP/EP
+    </div><!-- selecPadecimientoContainer -->
 
 </div><!--barraSuperior-->
 
 </body>
 
 <script>
-
 $("#inputInstituManual").range();
 $("#inputPadecimiento").range();
 $(".dataInput").dropdown();
@@ -215,14 +219,21 @@ $(document).ready(function () {
         updateValues();
     });
 
+
+
     $( "#inputManual" ).keyup( function(){
+      if( $.isNumeric( $( this ).val() ) ){
         poblacionManual = $(this).val();
         localStorage.setItem( "poblacionManual", $( this ).val() );
         updateValues();
+      }else{
+        $( this ).val( "" );
+        alert( "Por favor sólo ingresa números" );
+      }
     });
 
     $("#inputManual").on( "touchend", function(){
-        $( this ).val( "" );
+        //$( this ).val( "" );
         localStorage.removeItem( "poblacionManual");
         poblacionManual = 0;
         updateValues();
@@ -296,6 +307,7 @@ $(document).ready(function () {
            padecimientoSeleccionado = 0;
            trackSelecPadecimiento.children[1].children[0].style.left = "0%";
            $("#knobSPadecimiento").css( "left", trackSelecPadecimiento.children[1].children[0].style.left );
+           localStorage.setItem( "padecimientoSeleccionado", "0%" );
        }
 
     trackSelecPadecimiento.addEventListener('touchstart', function(e) {
