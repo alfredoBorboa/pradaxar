@@ -29,8 +29,9 @@
 
     <div id="headerViewportR" style="background-image: url(imgs/poblacion/headerRegRep.jpg);"></div>
 
-    <div id="inputPrevalencia">Prevalencia de FA en <span class="cedulaPadecimiento"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="number" id="inputPrevalenciaN"></div>
-
+    <div id="inputNombreRegRep"><input type="text" id="inputNombreRegRepN" value="Nombre del representante"></div>
+    <div id="inputApellido1RegRep"><input type="text" id="inputApellido1RegRepN" value="Apellido paterno"></div>
+    <div id="inputApellido2RegRep"><input type="text" id="inputApellido2RegRepN" value="Apellido materno"></div>
     <div id="btnSiguiente">Siguiente</div>
 </div><!--infoViewPort-->
 </div> <!--contentInfoR-->
@@ -40,7 +41,9 @@
 <script>
 
 $("#inputPadecimiento").range();
-$("#inputPrevalenciaN").number();
+$("#inputNombreRegRepN").number();
+$("#inputApellido1RegRepN").number();
+$("#inputApellido2RegRepN").number();
 
 var padecimientoSeleccionado = 0;
 
@@ -54,6 +57,37 @@ $(document).ready(function () {
     localStorage.removeItem("padecimientoSeleccionado");
     localStorage.removeItem( "poblacionAsegurada");
     localStorage.removeItem( "numPacientesATratar");*/
+
+    $( "#inputNombreRegRepN" ).keyup( function(){
+      localStorage.setItem( "nombreRepresentante", $( this ).val() );
+    });
+
+    $( "#inputNombreRegRepN" ).on( "touchend", function(){
+      $( this ).val( "" );
+      $( this ).change();
+    });
+
+    $( "#inputApellido1RegRepN" ).keyup( function(){
+      localStorage.setItem( "apellido1Representante", $( this ).val() );
+      console.log( localStorage.getItem( "apellido1Representante" ));
+    });
+
+    $( "#inputApellido1RegRepN" ).on( "touchend", function(){
+      $( this ).val( "" );
+      $( this ).change();
+    });
+
+    $( "#inputApellido2RegRepN" ).keyup( function(){
+      localStorage.setItem( "apellido2Representante", $( this ).val() );
+      console.log( localStorage.getItem( "apellido2Representante" ));
+    });
+
+    $( "#inputApellido2RegRepN" ).on( "touchend", function(){
+      $( this ).val( "" );
+      $( this ).change();
+    });
+
+
 
 });// document ready
 </script>

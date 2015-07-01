@@ -2,15 +2,18 @@
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <!--<meta name="viewport" content="width=device-height, height=device-width, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" />
+    <meta name="viewport" content="width=device-height, height=device-width, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<<script type="text/javascript" src="cordova.js"></script>
+<script src="js/index.js"></script>
 <script src="jquery.js"></script>
 <script src="formstone/js/core.js"></script>
 <script src="formstone/js/touch.js"></script>
 <script src="formstone/js/range.js"></script>
 <script src="formstone/js/dropdown.js"></script>
 <script src="formstone/js/number.js"></script>
+<script src="html2canvas.js"></script>
 
 <link rel="stylesheet" type="text/css" href="formstone/css/range.css">
 <link rel="stylesheet" type="text/css" href="formstone/css/dropdown.css">
@@ -269,6 +272,8 @@
 
 
 //----------------------------------------- gráfica
+
+var cuerpoMail = 0;
 
 $("#inputPadecimiento").range();
 $("#inputCompetencia").range();
@@ -691,6 +696,10 @@ function updateValues(){
 
                   $( ".numPacientes" ).html( "$ " +  Math.round( ( costoTotalComp - costoTotalDabi ) * 100 ) / 100 );
                   $( ".numPacientes" ).digits();
+               
+                    var pacientesATratarMail = (Math.round( ( localStorage.getItem( 'numPacientesATratar' ) ) * 100 ) / 100);
+
+                  cuerpoMail = "<div id='container' style='position:absolute;top:0;width:800px;height:900px;background-repeat:no-repeat;background-image: url(http://www.alfredoborboa.com/recPradaxar/pradaxarReporte.jpg); background-size: 100% auto;font-family:sans-serif;'> <div id='headReporte' style='position:absolute;width:520px;height:300px;font-size:30px;top:250px;left:280px;'> <span style='color:#00114b'><b>Reporte Pradaxar</b></span> <div style='width:520px;height:10px;border-bottom:2px solid #C00'></div> <div style='color:000;font-size:17px;margin-top:15px;'> Dr. Emilio Larrosa<br>" + localStorage.getItem( 'institucionSeleccionada') + "<br>" + localStorage.getItem( 'estadoSeleccionado') + "</div> </div><div id='cuerpo' style='position:absolute;width:740px;top:455px;height:640px;padding:30px'> <div style='border-bottom:1px solid #888;height:50px;line-height:50px;font-size:20px'>Pacientes a tratar: " + pacientesATratarMail + "</div><br> <div style='border-bottom:1px solid #888;height:50px;line-height:50px;font-size:20px'>Padecimiento: " + $( '.cedulaPadecimiento' ).html() + "</div><br> <div style='border-bottom:1px solid #888;height:50px;line-height:50px;font-size:20px'>Costo de tratamiento: $" + (Math.round( ( costoTotalDabi ) * 100 ) / 100) + "</div><br> </div> </div>";
 
             }//termina success de xml
         }); //termina AJAX Fanv
@@ -1013,6 +1022,11 @@ function updateValues(){
 
                   $( ".numPacientes" ).html( "$ " +  Math.round( ( costoTotalComp - costoTotalDabi ) * 100 ) / 100 );
                   $( ".numPacientes" ).digits();
+               
+                  var pacientesATratarMail = (Math.round( ( localStorage.getItem( 'numPacientesATratar' ) ) * 100 ) / 100);
+
+                  cuerpoMail = "<div id='container' style='position:absolute;top:0;width:800px;height:1400px;background-repeat:no-repeat;background-image: url(http://www.alfredoborboa.com/recPradaxar/pradaxarReporte.jpg); background-size: 100% auto;font-family:sans-serif;'> <div id='headReporte' style='position:absolute;width:520px;height:300px;font-size:30px;top:250px;left:280px;'> <span style='color:#00114b'><b>Reporte Pradaxar</b></span> <div style='width:520px;height:10px;border-bottom:2px solid #C00'></div> <div style='color:000;font-size:17px;margin-top:15px;'> Dr. Emilio Larrosa<br>" + localStorage.getItem( 'institucionSeleccionada') + "<br>" + localStorage.getItem( 'estadoSeleccionado' ) + "</div> </div><div id='cuerpo' style='position:absolute;width:740px;top:455px;height:940px;padding:30px'> <div style='border-bottom:1px solid #888;height:50px;line-height:50px;font-size:20px'>Pacientes a tratar: " + pacientesATratarMail + "</div><br> <div style='border-bottom:1px solid #888;height:50px;line-height:50px;font-size:20px'>Padecimiento: " + $( '.cedulaPadecimiento' ).html() + "</div><br><div style='border-bottom:1px solid #888;height:50px;line-height:50px;font-size:20px'>Costo de tratamiento: $" + (Math.round( ( costoTotalDabi ) * 100 ) / 100) + "</div><br> </div> </div>";
+
 
             }//termina success de xml
         }); //termina AJAX Tvp
@@ -1025,6 +1039,44 @@ $.fn.digits = function(){
         $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );
     })
 }
+
+//var captureUrl = 0;
+
+
+document.addEventListener('deviceready', function () {
+
+                          /*html2canvas(document.getElementById( "contentInfo" ), {
+                                      onrendered: function(canvas) {
+                                      document.body.appendChild(canvas);
+                                      canvas.style.zIndex = "-1";
+                                      canvas.style.position = "absolute";
+                                      canvas.style.backgroundColor = "#FFF";
+                                      canvas.id = "captureCanvas";
+                                      },
+                                      //width: 300,
+                                      //height: 300
+                                    });*/
+
+                          document.getElementById( "btnReporte" ).addEventListener( "touchend" ,function(){
+
+                                                                                   cordova.plugins.email.isAvailable(
+                                                                                                                     function (isAvailable) {
+
+                                                                                                                     cordova.plugins.email.open({
+                                                                                                                                                to:      "alfredo.borboa@gmail.com",
+                                                                                                                                                subject: "Reporte Pradaxar",
+                                                                                                                                                body:    cuerpoMail,
+                                                                                                                                                isHtml:  true
+                                                                                                                                                });
+
+                                                                                                                     }
+                                                                                                                     );
+
+                                                                                   });
+
+
+                          }, false);
+
 </script>
 
 </html>
