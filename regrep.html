@@ -5,6 +5,8 @@
     <!--<meta name="viewport" content="width=device-height, height=device-width, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />-->
+<!--<script type="text/javascript" src="cordova.js"></script>
+<script src="js/index.js"></script>-->
 <script src="jquery.js"></script>
 <script src="formstone/js/core.js"></script>
 <script src="formstone/js/touch.js"></script>
@@ -39,6 +41,8 @@
 </body>
 
 <script>
+    
+    
 
 $("#inputPadecimiento").range();
 $("#inputNombreRegRepN").number();
@@ -48,6 +52,19 @@ $("#inputApellido2RegRepN").number();
 var padecimientoSeleccionado = 0;
 
 $(document).ready(function () {
+                  
+                  $.ajax({
+                         type: "GET",
+                         url: "MEDICOS2.csv",
+                         dataType: "text",
+                         success: function(data) {
+                            var medicos = csvJSON(data);
+                            },
+                         error: function (xhr, ajaxOptions, thrownError) {
+                         console.log(xhr.status);
+                         console.log(thrownError);
+                         }
+                         });
 
    /* localStorage.removeItem( "anoSeleccionado");
     localStorage.removeItem( "estadoSeleccionado");
@@ -90,6 +107,33 @@ $(document).ready(function () {
 
 
 });// document ready
+
+//var csv is the CSV file with headers
+function csvJSON(csv){
+    
+    var lines=csv.split("\n");
+    
+    var result = [];
+    
+    var headers=lines[0].split(",");
+    console.log( headers.length );
+    for(var i=1;i<lines.length;i++){
+        
+        var obj = {};
+        var currentline=lines[i].split(",");
+        
+        for(var j=0;j<headers.length;j++){
+            obj[headers[j]] = currentline[j];
+        }
+        console.log( i );
+        result.push(obj);
+        
+    }
+    
+    //return result; //JavaScript object
+    return JSON.stringify(result); //JSON
+}
+
 </script>
 
 </html>
