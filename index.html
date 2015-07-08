@@ -27,8 +27,12 @@
 <script>
 
 $(document).ready(function () {
-
-  window.location = "regrep.html";
+                  
+                  if( localStorage.getItem( "nombreRepresentante" ) != "" && localStorage.getItem( "nombreRepresentante" ) != null ){
+                    window.location = "regmed.html";
+                  }else{
+                    window.location = "regrep.html";
+                  }
 
 });// document ready
 //open -a "Google Chrome" --args --allow-file-access-from-files

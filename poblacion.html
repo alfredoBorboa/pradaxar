@@ -2,9 +2,11 @@
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-height, height=device-width, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" />
+    <!--<meta name="viewport" content="width=device-height, height=device-width, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />-->
+<script type="text/javascript" src="cordova.js"></script>
+<script src="js/index.js"></script>
 <script src="jquery.js"></script>
 <script src="formstone/js/core.js"></script>
 <script src="formstone/js/touch.js"></script>
@@ -114,7 +116,7 @@
         </form>
     </div><!-- contentManual-->
 
-    <div id="btnSiguiente">Siguiente</div>
+    <div id="btnSiguiente" style="display:none" >Siguiente</div>
 </div><!--infoViewPort-->
 </div> <!--contentInfo-->
 
@@ -222,13 +224,14 @@ $(document).ready(function () {
 
 
     $( "#inputManual" ).keyup( function(){
-      if( $.isNumeric( $( this ).val() ) ){
+      if( $.isNumeric( $( this ).val() ) && $( this ).val() != "" && $( this ).val() > 0 ){
         poblacionManual = $(this).val();
         localStorage.setItem( "poblacionManual", $( this ).val() );
         updateValues();
       }else{
         $( this ).val( "" );
-        alert( "Por favor sólo ingresa números" );
+        alert( "Por favor sólo ingresa números mayores a 0." );
+        $( "#btnSiguiente" ).hide();
       }
     });
 
@@ -345,6 +348,10 @@ $(document).ready(function () {
         arrayBtnsLaterales[ i ].addEventListener( 'touchstart', function(){
             var stringBackground = "url(imgs/layout/" + this.id + ".png)";
             this.style.backgroundPosition = "0 -80px";
+                                                 if( this.id == "btnOnoff" ){
+                                                 this.style.backgroundPosition = "0 0px";
+                                                 pressOnoff();
+                                                 }
         });
 
         arrayBtnsLaterales[ i ].addEventListener( 'touchend', function(){
@@ -358,10 +365,44 @@ $(document).ready(function () {
             localStorage.setItem( "cedulaInstitucionManual", $( "#cedulaInstitucion").html() );
             window.location = "prevalencia.html";
       });
+                  
+                  
+                  //----------------------------------------------------evnetos para botones de reset
+                  function pressOnoff(){
+                        navigator.notification.confirm(
+                                                '¿Reiniciar y borrar datos?', // message
+                                                confirmarReinicioTotal,            // callback to invoke with index of button pressed
+                                                'Reiniciar',           // title
+                                                ['Sí','No']         // buttonLabels
+                                                );
+                                      
+                  }
+                  
+                  function confirmarReinicioTotal( buttonIndex ){
+                  if( buttonIndex == 1 ){
+                  localStorage.removeItem( "anoSeleccionado");
+                  localStorage.removeItem( "estadoSeleccionado");
+                  localStorage.removeItem( "institucionSeleccionada");
+                  localStorage.removeItem( "metodoSeleccionado");
+                  localStorage.removeItem( "poblacionManual");
+                  localStorage.removeItem("padecimientoSeleccionado");
+                  localStorage.removeItem( "poblacionAsegurada");
+                  localStorage.removeItem( "numPacientesATratar");
+                  localStorage.removeItem( "nombreMedico" );
+                  localStorage.removeItem( "apellidoPatMedico" );
+                  localStorage.removeItem( "apellitoMatMedico" );
+                  localStorage.removeItem( "nombrePilaMedico" );
+                  localStorage.removeItem( "nombreRepresentante" );
+                  localStorage.removeItem( "porcentajePrevalencia" );
+                  window.location = "regrep.html";
+                  }
+                  }
+                  //----------------------------------------------------evnetos para botones de reset
 
 });// document ready
 
 function updateValues(){
+    
     if( metodoSeleccionado == 0 ){
         $("#contentInstitucion").show();
         $("#contentManual").hide();
@@ -402,7 +443,10 @@ function updateValues(){
         $( "#cedulaInstitucion").html( "MANUAL" );
         //console.log( poblacionManual );
         poblacionAsegurada = poblacionManual;
-        console.log( poblacionAsegurada );
+        //console.log( poblacionAsegurada );
+        if( poblacionAsegurada > 1 ){
+            $( "#btnSiguiente" ).show();
+        }
     }
 
     if( padecimientoSeleccionado == 0 ){
@@ -413,8 +457,7 @@ function updateValues(){
         $( "#cedulaPadecimiento" ).html( "TVP/EP" );
     }
 
-
-}
+}//updateValues
 
 function xmlPoblacion(xml) {
     $(xml).find("Row").each(function () { // encuentra las Row's y loopea sobre ellas
@@ -434,11 +477,13 @@ function xmlPoblacion(xml) {
             if( $( this ).attr( "nombre" ) == institucionSeleccionada ){
                 poblacionAsegurada = poblacionTotal * $( this ).text();
                 //console.log( poblacionAsegurada );
-                console.log( poblacionAsegurada );
+                //console.log( poblacionAsegurada );
                 localStorage.setItem( "anoSeleccionado", anoSeleccionado );
                 localStorage.setItem( "estadoSeleccionado", estadoSeleccionado );
                 localStorage.setItem( "institucionSeleccionada", institucionSeleccionada );
-
+                                             if( poblacionAsegurada > 1 ){
+                                             $( "#btnSiguiente" ).show();
+                                             }
             }
         });
     });

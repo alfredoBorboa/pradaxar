@@ -2,9 +2,9 @@
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-height, height=device-width, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" />
+    <!--<meta name="viewport" content="width=device-height, height=device-width, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />-->
 <script type="text/javascript" src="cordova.js"></script>
 <script src="js/index.js"></script>
 <script src="jquery.js"></script>
@@ -233,7 +233,7 @@
 </body>
 
 <script>
-    
+
     var cuerpoMail = 0;
 
 $("#inputPadecimiento").range();
@@ -378,6 +378,7 @@ $(document).ready(function () {
     $(".fs-number").css( "width", "190px" );
     $(".fs-number").css( "margin-bottom", "-15px" );
 
+    //----------------------------------------------------touches para botones laterales
     arrayBtnsLaterales = document.getElementsByClassName( "btnLateral" );
 
     for( var i = 0; i < arrayBtnsLaterales.length; i++ ){
@@ -385,6 +386,10 @@ $(document).ready(function () {
         arrayBtnsLaterales[ i ].addEventListener( 'touchstart', function(){
             var stringBackground = "url(imgs/layout/" + this.id + ".png)";
             this.style.backgroundPosition = "0 -80px";
+                                                 if( this.id == "btnOnoff" ){
+                                                 this.style.backgroundPosition = "0 0px";
+                                                 pressOnoff();
+                                                 }
         });
 
         arrayBtnsLaterales[ i ].addEventListener( 'touchend', function(){
@@ -392,6 +397,38 @@ $(document).ready(function () {
             this.style.backgroundPosition = "0 0px";
         });
       }
+                  
+                  //----------------------------------------------------evnetos para botones de reset
+                  function pressOnoff(){
+                  navigator.notification.confirm(
+                                                 '¿Reiniciar y borrar datos?', // message
+                                                 confirmarReinicioTotal,            // callback to invoke with index of button pressed
+                                                 'Reiniciar',           // title
+                                                 ['Sí','No']         // buttonLabels
+                                                 );
+                  
+                  }
+                  
+                  function confirmarReinicioTotal( buttonIndex ){
+                  if( buttonIndex == 1 ){
+                  localStorage.removeItem( "anoSeleccionado");
+                  localStorage.removeItem( "estadoSeleccionado");
+                  localStorage.removeItem( "institucionSeleccionada");
+                  localStorage.removeItem( "metodoSeleccionado");
+                  localStorage.removeItem( "poblacionManual");
+                  localStorage.removeItem("padecimientoSeleccionado");
+                  localStorage.removeItem( "poblacionAsegurada");
+                  localStorage.removeItem( "numPacientesATratar");
+                  localStorage.removeItem( "nombreMedico" );
+                  localStorage.removeItem( "apellidoPatMedico" );
+                  localStorage.removeItem( "apellitoMatMedico" );
+                  localStorage.removeItem( "nombrePilaMedico" );
+                  localStorage.removeItem( "nombreRepresentante" );
+                  localStorage.removeItem( "porcentajePrevalencia" );
+                  window.location = "regrep.html";
+                  }
+                  }
+                  //----------------------------------------------------evnetos para botones de reset
 
 });// document ready
 
@@ -565,9 +602,9 @@ function updateValues(){
                   $( "#evcEvitadosFanv" ).html( Math.round( evcComp - evcDabi ) );
                   $( "#isquemicosEvitadosFanv" ).html( Math.round( isquemicosComp - isquemicosDabi ) );
                   $( "#hemorragiasEvitadosFanv" ).html( Math.round( hemorragiasComp - hemorragiasDabi ) );
-               
+
                var pacientesATratarMail = (Math.round( ( localStorage.getItem( 'numPacientesATratar' ) ) * 100 ) / 100);
-               
+
                cuerpoMail = "<div id='container' style='position:absolute;top:0;width:800px;height:900px;background-repeat:no-repeat;background-image: url(http://www.alfredoborboa.com/recPradaxar/pradaxarReporte.jpg); background-size: 100% auto;font-family:sans-serif;'> <div id='headReporte' style='position:absolute;width:520px;height:300px;font-size:30px;top:250px;left:280px;'> <span style='color:#00114b'><b>Reporte Pradaxar</b></span> <div style='width:520px;height:10px;border-bottom:2px solid #C00'></div> <div style='color:000;font-size:17px;margin-top:15px;'> Dr. Emilio Larrosa<br>" + localStorage.getItem( 'institucionSeleccionada') + "<br>" + localStorage.getItem( 'estadoSeleccionado') + "</div> </div><div id='cuerpo' style='position:absolute;width:740px;top:455px;height:640px;padding:30px'> <div style='border-bottom:1px solid #888;height:50px;line-height:50px;font-size:20px'>Pacientes a tratar: " + pacientesATratarMail + "</div><br> <div style='border-bottom:1px solid #888;height:50px;line-height:50px;font-size:20px'>Padecimiento: " + $( '.cedulaPadecimiento' ).html() + "</div><br> <div style='border-bottom:1px solid #888;height:50px;line-height:50px;font-size:20px'>Costo de tratamiento: $" + (Math.round( ( costoTotalDabi ) * 100 ) / 100) + "</div><br> </div> </div>";
 
             }//termina success de xml
@@ -796,9 +833,9 @@ function updateValues(){
                   $( "#infartoEvitadosTvp" ).html( Math.round( infartoComp - infartoDabi ) );
                   $( "#anginaEvitadosTvp" ).html( Math.round( anginaComp - anginaDabi ) );
                   $( "#sindromeEvitadosTvp" ).html( Math.round( sindromeComp - sindromeDabi ) );
-               
+
                var pacientesATratarMail = (Math.round( ( localStorage.getItem( 'numPacientesATratar' ) ) * 100 ) / 100);
-               
+
                cuerpoMail = "<div id='container' style='position:absolute;top:0;width:800px;height:900px;background-repeat:no-repeat;background-image: url(http://www.alfredoborboa.com/recPradaxar/pradaxarReporte.jpg); background-size: 100% auto;font-family:sans-serif;'> <div id='headReporte' style='position:absolute;width:520px;height:300px;font-size:30px;top:250px;left:280px;'> <span style='color:#00114b'><b>Reporte Pradaxar</b></span> <div style='width:520px;height:10px;border-bottom:2px solid #C00'></div> <div style='color:000;font-size:17px;margin-top:15px;'> Dr. Emilio Larrosa<br>" + localStorage.getItem( 'institucionSeleccionada') + "<br>" + localStorage.getItem( 'estadoSeleccionado') + "</div> </div><div id='cuerpo' style='position:absolute;width:740px;top:455px;height:640px;padding:30px'> <div style='border-bottom:1px solid #888;height:50px;line-height:50px;font-size:20px'>Pacientes a tratar: " + pacientesATratarMail + "</div><br> <div style='border-bottom:1px solid #888;height:50px;line-height:50px;font-size:20px'>Padecimiento: " + $( '.cedulaPadecimiento' ).html() + "</div><br> <div style='border-bottom:1px solid #888;height:50px;line-height:50px;font-size:20px'>Costo de tratamiento: $" + (Math.round( ( costoTotalDabi ) * 100 ) / 100) + "</div><br> </div> </div>";
             }//termina success de xml
         }); //termina AJAX Tvp
@@ -812,7 +849,7 @@ $.fn.digits = function(){
 }
 
 document.addEventListener('deviceready', function () {
-                          
+
                           /*html2canvas(document.getElementById( "contentInfo" ), {
                            onrendered: function(canvas) {
                            document.body.appendChild(canvas);
@@ -824,25 +861,25 @@ document.addEventListener('deviceready', function () {
                            //width: 300,
                            //height: 300
                            });*/
-                          
+
                           document.getElementById( "btnReporte" ).addEventListener( "touchend" ,function(){
-                                                                                   
+
                                                                                    cordova.plugins.email.isAvailable(
                                                                                                                      function (isAvailable) {
-                                                                                                                     
+
                                                                                                                      cordova.plugins.email.open({
                                                                                                                                                 to:      "alfredo.borboa@gmail.com",
                                                                                                                                                 subject: "Reporte Pradaxar",
                                                                                                                                                 body:    cuerpoMail,
                                                                                                                                                 isHtml:  true
                                                                                                                                                 });
-                                                                                                                     
+
                                                                                                                      }
                                                                                                                      );
-                                                                                   
+
                                                                                    });
-                          
-                          
+
+
                           }, false);
 </script>
 
