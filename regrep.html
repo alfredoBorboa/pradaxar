@@ -85,11 +85,13 @@ $(document).ready(function () {
     localStorage.removeItem("padecimientoSeleccionado");
     localStorage.removeItem( "poblacionAsegurada");
     localStorage.removeItem( "numPacientesATratar");*/
+    localStorage.removeItem( "nombreRepresentante" );
 
     $( ".dataInput" ).change( function(){
       if( $( this ).val() != "Seleccionar nombre" && $( this ).val() != undefined ){
         localStorage.setItem( "nombreRepresentante", $( this ).val() );
         if( localStorage.getItem( "nombreRepresentante" ) != "" ){
+          console.log( localStorage.getItem( "nombreRepresentante" ) );
           $( "#btnSiguiente" ).show();
         }else{
           $( "#btnSiguiente" ).hide();
@@ -100,6 +102,7 @@ $(document).ready(function () {
     $( "#inputNombreRepManual" ).keyup( function(){
       localStorage.setItem( "nombreRepresentante", $( this ).val() );
       if( localStorage.getItem( "nombreRepresentante" ) != "" ){
+        console.log( localStorage.getItem( "nombreRepresentante" ) );
         $( "#btnSiguiente" ).show();
       }else{
         $( "#btnSiguiente" ).hide();
@@ -107,7 +110,6 @@ $(document).ready(function () {
     });
 
     $( "#inputNombreRepManual" ).on( "touchend", function(){
-      console.log( "222" );
       $( ".dataInput" ).val( "0" );
       $( ".dataInput" ).change();
       $( "#btnSiguiente" ).hide();

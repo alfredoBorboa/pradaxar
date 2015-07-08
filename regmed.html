@@ -38,8 +38,10 @@
     <select name="nombreMed" id="nombreMed" class="dataInput">
       <option value="0">Seleccionar nombre</option>
     </select>
-    <span class="subtituloReg" id="subtituloRegManual" >Ingresar Nombre</span>
-    <input type="text" id="inputNombreRepManual">
+    <!--input manual -->
+    <div class="celdaRegManualMed">Apellido paterno</div><div class="celdaRegManualMed">Apellido materno</div><div class="celdaRegManualMed">Nombre</div>
+    <div class="celdaRegManualMed"><input type="text" class="inputNombreRepManual" id="inputApePat"></div><div class="celdaRegManualMed" ><input type="text" class="inputNombreRepManual" id="inputApeMat"></div><div class="celdaRegManualMed"><input type="text" class="inputNombreRepManual" id="inputNombrePila"></div>
+    <!-- input manual -->
 </div>
 
     <div id="btnSiguiente" style="display:none" >Siguiente</div>
@@ -49,7 +51,7 @@
 </body>
 
 <script>
-$("#inputNombreRepManual").number();
+$(".inputNombreRepManual").number();
 
 var padecimientoSeleccionado = 0;
 var representanteEstaRegistrado = false;
@@ -81,9 +83,9 @@ $(document).ready(function () {
                             $( "#subtituloRegAuto" ).hide();
                             $( ".fs-dropdown" ).hide();
                             $( "#nombreMed" ).hide();
-                            console.log( "333" );
                           }else{
                             $( "#subtituloRegManual" ).hide();
+                            $( ".celdaRegManualMed" ).hide();
                             $( "#inputNombreRepManual" ).hide();
                           }
                           },
@@ -100,11 +102,16 @@ $(document).ready(function () {
     localStorage.removeItem("padecimientoSeleccionado");
     localStorage.removeItem( "poblacionAsegurada");
     localStorage.removeItem( "numPacientesATratar");*/
+    localStorage.removeItem( "nombreMedico" );
+    localStorage.removeItem( "apellidoPatMedico" );
+    localStorage.removeItem( "apellitoMatMedico" );
+    localStorage.removeItem( "nombrePilaMedico" );
 
     $( ".dataInput" ).change( function(){
       if( $( this ).val() != "Seleccionar nombre" && $( this ).val() != undefined ){
-        localStorage.setItem( "nombreRepresentante", $( this ).val() );
-        if( localStorage.getItem( "nombreRepresentante" ) != "" ){
+        localStorage.setItem( "nombreMedico", $( this ).val() );
+        if( localStorage.getItem( "nombreMedico" ) != "" ){
+          console.log( localStorage.getItem( "nombreMedico" ) );
           $( "#btnSiguiente" ).show();
         }else{
           $( "#btnSiguiente" ).hide();
@@ -112,24 +119,42 @@ $(document).ready(function () {
       }
     });
 
-    $( "#inputNombreRepManual" ).keyup( function(){
-      localStorage.setItem( "nombreRepresentante", $( this ).val() );
-      if( localStorage.getItem( "nombreRepresentante" ) != "" ){
+    $( "#inputApePat" ).keyup( function(){
+      localStorage.setItem( "apellidoPatMedico", $( this ).val() );
+      evalInputsManuales();
+    });
+
+    $( "#inputApeMat" ).keyup( function(){
+      localStorage.setItem( "apellidoMatMedico", $( this ).val() );
+      evalInputsManuales();
+    });
+
+    $( "#inputNombrePila" ).keyup( function(){
+      localStorage.setItem( "nombrePilaMedico", $( this ).val() );
+      evalInputsManuales();
+    });
+
+    function evalInputsManuales(){
+      if( localStorage.getItem( "apellidoPatMedico" ) != "" && localStorage.getItem( "apellidoPatMedico" ) != null &&
+          localStorage.getItem( "apellidoMatMedico" ) != "" && localStorage.getItem( "apellidoMatMedico" ) != null &&
+          localStorage.getItem( "nombrePilaMedico" ) != "" && localStorage.getItem( "nombrePilaMedico" ) != null){
+        var nombreCompletoManual = localStorage.getItem( "apellidoPatMedico" ) + " " + localStorage.getItem( "apellidoMatMedico" ) + " " + localStorage.getItem( "nombrePilaMedico" );
+        localStorage.setItem( "nombreMedico" , nombreCompletoManual );
+        console.log( localStorage.getItem( "nombreMedico" ) );
         $( "#btnSiguiente" ).show();
       }else{
         $( "#btnSiguiente" ).hide();
       }
-    });
+    }//evalInputsManuales
 
-    $( "#inputNombreRepManual" ).on( "touchend", function(){
-      console.log( "222" );
+  /*  $( "#inputApePat" ).on( "touchend", function(){
       $( ".dataInput" ).val( "0" );
       $( ".dataInput" ).change();
       $( "#btnSiguiente" ).hide();
-    });
+    });*/
 
     $( "#btnSiguiente" ).on( "touchend", function(){
-      window.location = "bienvrep.html";
+      window.location = "bienvmed.html";
     });
 
 
