@@ -844,3 +844,41 @@ margin-right: 100px;
 }
 
 /* ---------------------------------Para sección Costos -------------------------- */
+/* ---------------------------------Para sección Regrep ---------------------------*/
+#contRegistroParaRepMed{
+  font-family: 'Lato-Black', sans-serif;
+  position:absolute;
+  width:500px;
+  left:50%;
+  top:250px;
+  height:250px;
+  font-size: 25px;
+  letter-spacing: 0.055em;
+  color: #30333b;
+  margin-left:-250px;
+  text-align: center;
+}
+
+.subtituloReg{
+  font-family: 'Lato-Regular', sans-serif;
+  font-size: 15px;
+
+}
+/* ---------------------------------Para sección bienvrep ---------------------------*/
+#contBienvParaRepMed{
+  font-family: 'Lato-Light', sans-serif;
+  position:absolute;
+  width:500px;
+  left:50%;
+  top:250px;
+  height:250px;
+  font-size: 25px;
+  letter-spacing: 0.055em;
+  color: #30333b;
+  margin-left:-250px;
+  text-align: center;
+}
+
+#nombreRep{
+  font-family: 'Lato-Regular', sans-serif;
+}

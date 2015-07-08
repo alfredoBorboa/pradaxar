@@ -33,12 +33,12 @@
     <div id="headerViewportR" style="background-image: url(imgs/poblacion/headerRegRep.jpg);"></div>
 
 <div id="contRegistroParaRepMed">
-    Nombre del Representante<br><br>
-    <span class="subtituloReg">Seleccionar de la lista</span>
-    <select name="nombreRep" id="nombreRep" class="dataInput">
+    Nombre del Médico<br><br>
+    <span class="subtituloReg" id="subtituloRegAuto">Seleccionar de la lista</span>
+    <select name="nombreMed" id="nombreMed" class="dataInput">
       <option value="0">Seleccionar nombre</option>
     </select>
-    <span class="subtituloReg">o Ingresar nuevo Representante</span>
+    <span class="subtituloReg" id="subtituloRegManual" >Ingresar Nombre</span>
     <input type="text" id="inputNombreRepManual">
 </div>
 
@@ -52,6 +52,7 @@
 $("#inputNombreRepManual").number();
 
 var padecimientoSeleccionado = 0;
+var representanteEstaRegistrado = false;
 
 $(document).ready(function () {
 
@@ -65,13 +66,27 @@ $(document).ready(function () {
                            var arrayDocs = Papa.parse(data);
 
                            for( var i = 1; i < arrayDocs.data.length; i++ ){
-                             if( arrayDocs.data[ i - 1 ][ 6 ] != arrayDocs.data[ i ][ 6 ] && arrayDocs.data[ i ][ 6 ] != undefined ){
-                               $( "#nombreRep" ).append( "<option value='" + arrayDocs.data[ i ][ 6 ] + "' >" + arrayDocs.data[ i ][ 6 ] + "</option>" );
+                             if( arrayDocs.data[ i ][ 6 ] == localStorage.getItem( "nombreRepresentante" ) ){
+                               var nombreMedico = arrayDocs.data[ i ][ 8 ] + " " + arrayDocs.data[ i ][ 9 ] + " " + arrayDocs.data[ i ][ 10 ];
+                               $( "#nombreMed" ).append( "<option value='" + nombreMedico + "' >" + nombreMedico + "</option>" );
+                               representanteEstaRegistrado = true;
+
                              }
                            }
+
                            $(".dataInput").dropdown();
                            $( ".fs-dropdown" ).css( "margin-top", "3px" );
-                            },
+
+                          if( representanteEstaRegistrado == false ){
+                            $( "#subtituloRegAuto" ).hide();
+                            $( ".fs-dropdown" ).hide();
+                            $( "#nombreMed" ).hide();
+                            console.log( "333" );
+                          }else{
+                            $( "#subtituloRegManual" ).hide();
+                            $( "#inputNombreRepManual" ).hide();
+                          }
+                          },
                          error: function (xhr, ajaxOptions, thrownError) {
                          console.log(xhr.status);
                          console.log(thrownError);
