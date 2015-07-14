@@ -397,7 +397,7 @@ $(document).ready(function () {
             this.style.backgroundPosition = "0 0px";
         });
       }
-                  
+
                   //----------------------------------------------------evnetos para botones de reset
                   function pressOnoff(){
                   navigator.notification.confirm(
@@ -406,9 +406,9 @@ $(document).ready(function () {
                                                  'Reiniciar',           // title
                                                  ['Sí','No']         // buttonLabels
                                                  );
-                  
+
                   }
-                  
+
                   function confirmarReinicioTotal( buttonIndex ){
                   if( buttonIndex == 1 ){
                   localStorage.removeItem( "anoSeleccionado");
@@ -868,7 +868,7 @@ document.addEventListener('deviceready', function () {
                                                                                                                      function (isAvailable) {
 
                                                                                                                      cordova.plugins.email.open({
-                                                                                                                                                to:      "alfredo.borboa@gmail.com",
+                                                                                                                                                to:      "reportespradaxar@alfredoborboa.com",
                                                                                                                                                 subject: "Reporte Pradaxar",
                                                                                                                                                 body:    cuerpoMail,
                                                                                                                                                 isHtml:  true
