@@ -105,6 +105,7 @@
     <option value="SeguroPopular">Seguro Popular</option>
 </select>
 </form>
+<div id="disclaimerPoblacion">Nota: La población promedio por institución se calcula en base a una proyección multiplicada por la participación porcentual de derechohabientes que tiene cada institución.</div>
     </div><!--contentInstitucion-->
 
     <div id="contentManual">
@@ -365,8 +366,8 @@ $(document).ready(function () {
             localStorage.setItem( "cedulaInstitucionManual", $( "#cedulaInstitucion").html() );
             window.location = "prevalencia.html";
       });
-                  
-                  
+
+
                   //----------------------------------------------------evnetos para botones de reset
                   function pressOnoff(){
                         navigator.notification.confirm(
@@ -375,9 +376,9 @@ $(document).ready(function () {
                                                 'Reiniciar',           // title
                                                 ['Sí','No']         // buttonLabels
                                                 );
-                                      
+
                   }
-                  
+
                   function confirmarReinicioTotal( buttonIndex ){
                   if( buttonIndex == 1 ){
                   localStorage.removeItem( "anoSeleccionado");
@@ -402,7 +403,7 @@ $(document).ready(function () {
 });// document ready
 
 function updateValues(){
-    
+
     if( metodoSeleccionado == 0 ){
         $("#contentInstitucion").show();
         $("#contentManual").hide();

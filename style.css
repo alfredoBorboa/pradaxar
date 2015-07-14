@@ -367,6 +367,16 @@ box-shadow: 0px 3px 25px -4px rgba(0,0,0,0.75);
   font-size: 30px;
 }
 
+#disclaimerPoblacion{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:20px;
+  height:40px;
+  text-align: center;
+  color:#999;
+}
+
 /* ------------------------------- Para seccion Prevalencia ---------------------- */
 
 #inputPrevalencia{
